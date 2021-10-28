@@ -1,17 +1,18 @@
 from fastapi import FastAPI, File, UploadFile
 from typing import Optional
-from fastapi import FastAPI
 from pydantic import BaseModel
 import extractAvgColor
 
 
 app = FastAPI()
 
+
 class color(BaseModel):
     name: str
     code: str
     tone: str
     base: str
+
 
 class averagecolors(BaseModel):
     color1: Optional[color]
@@ -20,8 +21,13 @@ class averagecolors(BaseModel):
     color4: Optional[color]
 
 
+@app.get("/")
+def read_root():
+    return {"Hello": "World"}
+
+
 @app.post("/averagecolors")
-async def averagecolors(imgfile: UploadFile = File(...)):
+async def averagecolor(imgfile: UploadFile = File(...)):
     img = await imgfile.read()
     colors = extractAvgColor.extractAvgColor(img)
     return {
