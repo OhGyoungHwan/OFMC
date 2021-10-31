@@ -75,7 +75,8 @@ def extractAvgColor(img):
     )
     onelinecolors = smallthreedimensionimage.reshape(
         (smallthreedimensionimage.shape[0] *
-         smallthreedimensionimage.shape[1], 3)
+         smallthreedimensionimage.shape[1],
+         3)
     )
     clt = KMeans(n_clusters=NUMBER_OF_COLORS)
     clt.fit(onelinecolors)

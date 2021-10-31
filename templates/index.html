@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>옷깔맞춤</title>
+        <meta charset="utf-8" />
+        <meta
+            name="google-site-verification"
+            content="lQ7lUCK_-27QbOJdX_Op5O8wneVVVU5veaTwhJIAOIY"
+        />
+        <meta name="naver-site-verification" content="9d8d4499acc2eaed881a264467f793996d49cd08" />
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta
+            name="description"
+            content="사이트를 통해서 다양한 색상 조합을 찾을 수 있습니다. 베이스 색상으로 올려주면 설명이 나와요!!"
+        />
+        <meta property="og:title" content="옷컬러조합" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://coloravg.run.goorm.io/" />
+        <meta property="og:image" content="https://coloravg.run.goorm.io/static/active.png" />
+        <meta
+            property="og:description"
+            content="저희 사이트는 옷색상조합에 최적화되어 바쁜아침, 쇼핑에 도움을 줍니다!"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="title" content="옷컬러조합 찾기" />
+        <meta name="subject" content="2장의 사진을 이용해 찾는 최고의 옷색조합" />
+        <meta
+            name="keywords"
+            content="옷깔맞춤, 옷컬러, 뭐입지, 색상조합, 컬러조합, 옷 색상표, 색상매치, 컬러, 코디, 패션, 색상 매치, 상하의 매치, 옷컬러조합 찾기 사이트"
+        />
+        <meta name="author" content="오경환" />
+        <link rel="canonical" href="https://coloravg.run.goorm.io/" />
+        <link rel="shortcut icon" href="https://coloravg.run.goorm.io/static/favicon.ico" />
+        <link rel="icon" href="https://coloravg.run.goorm.io/static/favicon.ico" />
+        <link href="{{ url_for('static', path='/css/bootstrap.min.css') }}" rel="stylesheet" />
+        <link href="{{ url_for('static', path='/home.css') }}" type="text/css" rel="stylesheet" />
+    </head>
+    <body>
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script src="{{ url_for('static', path='/js/bootstrap.min.js') }}"></script>
+        <script>
+            async function readURL(input) {
+                const formData = new FormData();
+                if (input.files && input.files[0]) {
+                    formData.append('file', input.files[0], input.files[0].name);
+                    const response = await fetch('https://okhfastapi.run.goorm.io/averagecolors', {
+                        method: 'POST',
+                        body: formData,
+                    });
+                    let json = await response.json();
+                    console.log(json);
+                }
+            }
+        </script>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!--네비게이션_바-->
+        <div id="image-upload-wrap" class="mt-3 container w-100">
+            <div class="row text-center position-relative justify-content-around">
+                <div class="w-100">
+                    <div id="image-upload">
+                        <input
+                            type="file"
+                            accept="image/*"
+                            class="visually-hidden"
+                            id="inputGroupFile01"
+                            onchange="readURL(this);"
+                        />
+                        <label
+                            class="d-flex align-items-center"
+                            for="inputGroupFile01"
+                            id="image-input-label"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                class="m-auto"
+                                viewBox="0 0 16 16"
+                                id="input-svg"
+                            >
+                                <path
+                                    d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"
+                                />
+                                <path
+                                    d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z"
+                                />
+                            </svg>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--이미지_업로드-->
+        <div class="mt-3 container d-flex justify-content-center">
+            <ins
+                class="kakao_ad_area"
+                style="display: none;"
+                data-ad-unit="DAN-wgbZJLFJH1wIbNUN"
+                data-ad-width="320"
+                data-ad-height="100"
+            ></ins>
+            <script src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+        </div>
+        <!--광고-->
+        <div class="mt-3 container justify-content-center">
+            <div class="row w-100 m-auto">
+                <div class="w-100 text-center">설명을 클릭하면 영상으로 볼 수 있습니다.</div>
+                <button
+                    type="button"
+                    class="btn btn-light text-left w-100"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#explanation1"
+                    aria-controls="explanation1"
+                >
+                    1. <q>베이스가 될 옷</q> 사진을 올려주세요 <br />(옷의 주된 색이 많이
+                    보여야합니다. 다른 색이 많이 들어가면 결과가 올바르지 않을 수 있어요!)
+                </button>
+                <button
+                    type="button"
+                    class="btn btn-light text-left w-100 mt-1"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#explanation2"
+                    aria-controls="explanation2"
+                >
+                    2. 출력되는 색상중에 <q>알맞은 색상버튼</q>을 선택해 주세요 <br />3. 그 후
+                    <q>확인</q>을 누르면 잠시후 결과가 나옵니다.
+                </button>
+                <div id="explanation1" class="offcanvas p-0" tabindex="-1" aria-hidden="true">
+                    <div class="text-center p-0">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasLabel">설명1</h5>
+                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        <img
+                            src="http://okhfastapi.run.goorm.io/static/images/explanation1.gif"
+                            class="offcanvas-body w-100 p-0"
+                            alt="사용방법1"
+                        />
+                    </div>
+                </div>
+                <!--설명1확장용-->
+                <div id="explanation2" class="offcanvas p-0" tabindex="-1" aria-hidden="true">
+                    <div class="text-center p-0">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasLabel">설명2</h5>
+                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        <img
+                            src="http://okhfastapi.run.goorm.io/static/images/explanation2.gif"
+                            class="offcanvas-body w-100 p-0"
+                            alt="사용방법2"
+                        />
+                    </div>
+                </div>
+                <!--설명2확장용-->
+            </div>
+        </div>
+        <!--설명-->
+        <div id="disqus_thread" class="mt-3">
+            <script>
+                /**
+                 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+                var disqus_config = function () {
+                this.page.url = "https://okhfastapi.run.goorm.io/";  // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier = "ko"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+                (function () {
+                    // DON'T EDIT BELOW THIS LINE
+                    var d = document,
+                        s = d.createElement('script');
+                    s.src = 'https://coloravg.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+        </div>
+        <!--disqus댓글-->
+    </body>
+</html>

@@ -1,0 +1,44 @@
+﻿@font-face {
+    font-family: 'BMJUA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+div, nav {
+    font-family: 'BMJUA';
+}
+
+.navbar-collapse{
+    transition: 500ms;
+}
+
+.offcanvas.show{
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    height:42vw;
+}
+
+#image-upload-wrap{
+    max-width: 100%;
+}
+
+#image-input-label, #image-upload{
+  height: 30vw;
+}
+
+#image-input-label{
+  object-fit: contain;
+  border-radius: 10px;
+  border: dashed 1.5px #35465d;
+}
+
+#image-input-label::after{
+  visibility: hidden;
+}
+
+#input-svg{
+    height: 15vw;
+    width: 15vw;
+}

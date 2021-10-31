@@ -1,10 +1,17 @@
-from fastapi import FastAPI, File, UploadFile
+from fastapi import FastAPI, Request, File, UploadFile
+from fastapi.responses import HTMLResponse
+from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
 from typing import Optional
 from pydantic import BaseModel
 import extractAvgColor
 
 
 app = FastAPI()
+
+app.mount("/static", StaticFiles(directory="static"), name="static")
+
+templates = Jinja2Templates(directory="templates")
 
 
 class color(BaseModel):
@@ -21,14 +28,14 @@ class averagecolors(BaseModel):
     color4: Optional[color]
 
 
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
+@app.get("/", response_class=HTMLResponse)
+async def read_root(request: Request):
+    return templates.TemplateResponse("index.html", {"request": request})
 
 
 @app.post("/averagecolors")
-async def averagecolor(imgfile: UploadFile = File(...)):
-    img = await imgfile.read()
+async def averagecolor(file: UploadFile = File(...)):
+    img = await file.read()
     colors = extractAvgColor.extractAvgColor(img)
     return {
         "color1": colors[0],
