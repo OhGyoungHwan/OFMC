@@ -2669,7 +2669,6 @@ textarea.form-control.is-invalid {
 .btn-check:focus + .btn,
 .btn:focus {
     outline: 0;
-    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
 .btn.disabled,
 .btn:disabled,
@@ -3229,16 +3228,14 @@ fieldset:disabled .btn {
 }
 .btn-outline-dark {
     color: #212529;
-    border-color: #212529;
+    font-size: 8vw;
 }
 .btn-outline-dark:hover {
     color: #fff;
     background-color: #212529;
-    border-color: #212529;
 }
 .btn-check:focus + .btn-outline-dark,
 .btn-outline-dark:focus {
-    box-shadow: 0 0 0 0.25rem rgba(33, 37, 41, 0.5);
 }
 .btn-check:active + .btn-outline-dark,
 .btn-check:checked + .btn-outline-dark,
@@ -3247,14 +3244,12 @@ fieldset:disabled .btn {
 .btn-outline-dark:active {
     color: #fff;
     background-color: #212529;
-    border-color: #212529;
 }
 .btn-check:active + .btn-outline-dark:focus,
 .btn-check:checked + .btn-outline-dark:focus,
 .btn-outline-dark.active:focus,
 .btn-outline-dark.dropdown-toggle.show:focus,
 .btn-outline-dark:active:focus {
-    box-shadow: 0 0 0 0.25rem rgba(33, 37, 41, 0.5);
 }
 .btn-outline-dark.disabled,
 .btn-outline-dark:disabled {
