@@ -33,7 +33,7 @@ async def read_root(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
 
-@app.post("/averagecolors")
+@app.post("/averagecolors", status_code=200)
 async def averagecolor(file: UploadFile = File(...)):
     img = await file.read()
     colors = extractAvgColor.extractAvgColor(img)
@@ -41,5 +41,7 @@ async def averagecolor(file: UploadFile = File(...)):
         "color1": colors[0],
         "color2": colors[1],
         "color3": colors[2],
-        "color4": colors[3]
+        "color4": colors[3],
+        "color5": colors[4],
+        "color6": colors[5]
     }

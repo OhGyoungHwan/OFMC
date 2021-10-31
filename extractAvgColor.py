@@ -5,7 +5,7 @@ import math
 import pandas as pd
 
 
-NUMBER_OF_COLORS = 4
+NUMBER_OF_COLORS = 6
 DF_MIN = 1000
 
 
@@ -13,7 +13,9 @@ color = pd.read_csv("csv/colors.csv")
 
 
 def closecolor(x, y, z):
+    global color
     minimumdifference = DF_MIN
+    minimumdifferenceindex = 0
     for colorindex in range(len(color)):
         currentdifference = math.sqrt(
             (x-color["x"][colorindex])**2 +
@@ -50,7 +52,9 @@ def bgrtohsv(bgr):
         h = 0
     else:
         s = 1 - m/v
-        if v == bgr[2]:
+        if bgr[0] == bgr[1] and bgr[1] == bgr[2]:
+            h = 0
+        elif v == bgr[2]:
             h = 60 * (bgr[1] - bgr[0]) / (v - m)
         elif v == bgr[1]:
             h = 120 + (60 * (bgr[0] - bgr[2])) / (v - m)
