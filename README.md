@@ -1,5 +1,6 @@
 # OFMC
 깔맞춤을 최적화해주는 서비스
+SPA로 작동할 것이고 기존 avgcolor를 최적화해서 사용자의 지속적이 사용의 도모한다.
 
 ## 필요한 명령어 모음:
 pip install --upgrade pip
