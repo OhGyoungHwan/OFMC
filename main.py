@@ -33,6 +33,12 @@ async def read_root(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
 
+@app.get("/Analysis/{base_id}/{tone_id}/{toborbottom}")
+async def read_user_item(base_id: str, tone_id: str, toborbottom: str):
+    return {
+    }
+
+
 @app.post("/averagecolors", status_code=200)
 async def averagecolor(file: UploadFile = File(...)):
     img = await file.read()

@@ -2129,11 +2129,10 @@ textarea.form-control-lg {
     height: 1em;
     margin-top: 0.25em;
     vertical-align: top;
-    background-color: #fff;
+    background-color: #B07500;
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    border: 1px solid rgba(0, 0, 0, 0.25);
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -2150,9 +2149,7 @@ textarea.form-control-lg {
     filter: brightness(90%);
 }
 .form-check-input:focus {
-    border-color: #86b7fe;
     outline: 0;
-    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
 .form-check-input:checked {
     background-color: #0d6efd;
@@ -3228,7 +3225,7 @@ fieldset:disabled .btn {
 }
 .btn-outline-dark {
     color: #212529;
-    font-size: 8vw;
+    font-size: 5vw;
 }
 .btn-outline-dark:hover {
     color: #fff;

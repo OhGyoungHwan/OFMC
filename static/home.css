@@ -51,12 +51,16 @@ nav {
 }
 
 #resultcolor {
-    height:70vw;
+    height:53vw;
     display: none;
 }
 
 #checkwrap {
     height: 15vw;
+}
+
+#analysis {
+    font-size:5vw;
 }
 
 /* ---------------------로딩바 표현 부분----------------------- */
