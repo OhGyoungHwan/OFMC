@@ -56,12 +56,17 @@
                         '</label>';
                 }
                 html +=
-                    "<div class='col-12 form-check form-switch'><input class='form-check-input' type='checkbox' role='switch' id='flexSwitchCheckDefault'><label class='form-check-label' for='flexSwitchCheckDefault'></label></div>";
+                    "<div id='checkwrap' class='col-12 mx-0 p-0 form-check form-switch'><input class='form-check-input m-0 w-50 h-100' type='checkbox' role='switch' id='flexSwitchCheckDefault'><label class='form-check-label' for='flexSwitchCheckDefault'></label>";
+                html +=
+                    "<button type='button' class='btn btn-success w-50 h-100'>Success</button></div>";
                 document.getElementById('resultcolor').innerHTML = html;
-                document.getElementById('image-upload-wrap').style.display = 'none';
+                document.getElementById('resultloding').style.display = 'none';
                 document.getElementById('resultcolor').style.display = 'flex';
             }
             async function readURL(input) {
+                document.getElementById('image-upload-wrap').style.display = 'none';
+                document.getElementById('resultloding').innerHTML = "<div class='mosaic-loader p-0'><div class='cell d-0'></div><div class='cell d-1'></div><div class='cell d-2'></div><div class='cell d-3'></div><div class='cell d-1'></div><div class='cell d-2'></div><div class='cell d-3'></div><div class='cell d-4'></div><div class='cell d-2'></div><div class='cell d-3'></div><div class='cell d-4'></div><div class='cell d-5'></div><div class='cell d-3'></div><div class='cell d-4'></div><div class='cell d-5'></div><div class='cell d-6'></div></div>";
+                document.getElementById('resultloding').style.display = 'flex';
                 if (input.files && input.files[0]) {
                     const formData = new FormData();
                     formData.append('file', input.files[0], input.files[0].name);
@@ -72,6 +77,7 @@
                         .then((response) => {
                             if (response.status === 404) {
                             } else if (response.status === 200) {
+                                console.log(response.readystatus);
                                 return response.json();
                             } else {
                                 alert('올바른 사진을 올려주시기 바랍니다.');
@@ -116,9 +122,9 @@
         </nav>
         <!--네비게이션_바-->
         <div id="image-upload-wrap" class="mt-3 container w-100">
-            <div class="row text-center position-relative justify-content-around">
+            <div class="row h-100 text-center position-relative justify-content-around">
                 <div class="w-100">
-                    <div id="image-upload">
+                    <div id="image-upload" class="h-100">
                         <input
                             type="file"
                             accept="image/*"
@@ -127,7 +133,7 @@
                             onchange="readURL(this);"
                         />
                         <label
-                            class="d-flex align-items-center"
+                            class="d-flex align-items-center h-100"
                             for="inputGroupFile01"
                             id="image-input-label"
                         >
@@ -153,6 +159,8 @@
             </div>
         </div>
         <!--이미지_업로드-->
+        <div id="resultloding" class="row w-100 m-auto"></div>
+        <!--로딩출력창-->
         <div id="resultcolor" class="row w-100 m-auto"></div>
         <!--결과출력창-->
         <div class="mt-3 container d-flex justify-content-center">
