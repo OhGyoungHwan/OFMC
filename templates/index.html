@@ -65,7 +65,8 @@
             }
             async function readURL(input) {
                 document.getElementById('image-upload-wrap').style.display = 'none';
-                document.getElementById('resultloding').innerHTML = "<div class='mosaic-loader p-0'><div class='cell d-0'></div><div class='cell d-1'></div><div class='cell d-2'></div><div class='cell d-3'></div><div class='cell d-1'></div><div class='cell d-2'></div><div class='cell d-3'></div><div class='cell d-4'></div><div class='cell d-2'></div><div class='cell d-3'></div><div class='cell d-4'></div><div class='cell d-5'></div><div class='cell d-3'></div><div class='cell d-4'></div><div class='cell d-5'></div><div class='cell d-6'></div></div>";
+                document.getElementById('resultloding').innerHTML =
+                    "<div class='mosaic-loader p-0'><div class='cell d-0'></div><div class='cell d-1'></div><div class='cell d-2'></div><div class='cell d-3'></div><div class='cell d-1'></div><div class='cell d-2'></div><div class='cell d-3'></div><div class='cell d-4'></div><div class='cell d-2'></div><div class='cell d-3'></div><div class='cell d-4'></div><div class='cell d-5'></div><div class='cell d-3'></div><div class='cell d-4'></div><div class='cell d-5'></div><div class='cell d-6'></div></div>";
                 document.getElementById('resultloding').style.display = 'flex';
                 if (input.files && input.files[0]) {
                     const formData = new FormData();
