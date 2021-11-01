@@ -42,36 +42,48 @@
         <script src="{{ url_for('static', path='/js/bootstrap.min.js') }}"></script>
         <script>
             function appendresultcolor(resultcolors) {
-                let html = "";
-                for(var i in resultcolors){
-                    html += "<input type='radio' class='btn-check col-4 m-0' name='options' id='option"+i+"'><label class='btn col-4 btn-outline-dark' for='option"+i+"'style='background-color:#"+resultcolors[i].code+";'>"+resultcolors[i].name+"</label>";
+                let html = '';
+                for (var i in resultcolors) {
+                    html +=
+                        "<input type='radio' class='btn-check col-4 m-0' name='options' id='option" +
+                        i +
+                        "'><label class='btn col-4 btn-outline-dark' for='option" +
+                        i +
+                        "'style='background-color:#" +
+                        resultcolors[i].code +
+                        ";'>" +
+                        resultcolors[i].name +
+                        '</label>';
                 }
-                html += "<div class='col-12 form-check form-switch'><input class='form-check-input' type='checkbox' role='switch' id='flexSwitchCheckDefault'><label class='form-check-label' for='flexSwitchCheckDefault'></label></div>";
+                html +=
+                    "<div class='col-12 form-check form-switch'><input class='form-check-input' type='checkbox' role='switch' id='flexSwitchCheckDefault'><label class='form-check-label' for='flexSwitchCheckDefault'></label></div>";
                 document.getElementById('resultcolor').innerHTML = html;
-                document.getElementById('image-upload-wrap').style.display = "none";
-                document.getElementById('resultcolor').style.display = "flex";
+                document.getElementById('image-upload-wrap').style.display = 'none';
+                document.getElementById('resultcolor').style.display = 'flex';
             }
             async function readURL(input) {
                 if (input.files && input.files[0]) {
                     const formData = new FormData();
                     formData.append('file', input.files[0], input.files[0].name);
-                    fetch('https://okhfastapi.run.goorm.io/averagecolors',{
+                    fetch('https://okhfastapi.run.goorm.io/averagecolors', {
                         method: 'POST',
                         body: formData,
-                    }).then((response) => {
-                        if (response.status === 404) {
-                            
-                        } else if (response.status === 200) {
-                            return response.json();
-                        } else {
-                            alert('올바른 사진을 올려주시기 바랍니다.');
-                            throw new Error("Unexpected Http Status Code");
-                        }
-                    }).then((responseJson) => {
-                        appendresultcolor(responseJson);
-                    }).catch((error) => {
-                        console.log(error);
-                    });
+                    })
+                        .then((response) => {
+                            if (response.status === 404) {
+                            } else if (response.status === 200) {
+                                return response.json();
+                            } else {
+                                alert('올바른 사진을 올려주시기 바랍니다.');
+                                throw new Error('Unexpected Http Status Code');
+                            }
+                        })
+                        .then((responseJson) => {
+                            appendresultcolor(responseJson);
+                        })
+                        .catch((error) => {
+                            console.log(error);
+                        });
                 }
             }
         </script>
@@ -141,8 +153,7 @@
             </div>
         </div>
         <!--이미지_업로드-->
-        <div id="resultcolor" class="row w-100 m-auto">
-        </div>
+        <div id="resultcolor" class="row w-100 m-auto"></div>
         <!--결과출력창-->
         <div class="mt-3 container d-flex justify-content-center">
             <ins
