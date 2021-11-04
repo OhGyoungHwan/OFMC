@@ -1,0 +1,109 @@
+tone,base,style
+b,red,casual
+d,red,"elegant, retro"
+dk,red,"classic, retro"
+dkg,red,"natural, classic"
+dp,red,"classic, ethnic, retro"
+g,red,"natural, retro"
+lf,red,lovely
+ltg,red,"natural, retro"
+p,red,"lovely, natural"
+s,red,elegant
+sf,red,elegant
+v,red,casual
+b,orange,casual
+d,orange,retro
+dk,orange,"classic, retro"
+dkg,orange,"natural, classic"
+dp,orange,"classic, ethnic, retro"
+g,orange,"natural, amekaji"
+lf,orange,lovely
+ltg,orange,"natural, amekaji, retro"
+p,orange,"lovely, natural, amekaji"
+s,orange,"natural, amekaji"
+sf,orange,"natural, amekaji"
+v,orange,casual
+b,yellow,casual
+d,yellow,retro
+dk,yellow,retro
+dkg,yellow,natural
+dp,yellow,"ethnic, retro"
+g,yellow,"natural, amekaji, retro"
+lf,yellow,lovely
+ltg,yellow,"natural, amekaji"
+p,yellow,"lovely, natural, amekaji"
+s,yellow,"natural, amekaji"
+sf,yellow,"natural, amekaji"
+v,yellow,casual
+b,green,"minimum, casual"
+d,green,retro
+dk,green,"classic, retro"
+dkg,green,"natural, classic"
+dp,green,"classic, ethnic, retro"
+g,green,"natural, amekaji, retro"
+lf,green,"minimum, casual"
+ltg,green,"natural, amekaji"
+p,green,"natural, amekaji"
+s,green,"natural, amekaji"
+sf,green,minimum
+v,green,casual
+b,blue,"minimum, casual"
+d,blue,retro
+dk,blue,retro
+dkg,blue,natural
+dp,blue,"ethnic, retro"
+g,blue,"natural, amekaji, retro"
+lf,blue,"minimum, modern, casual"
+ltg,blue,"modern, amekaji"
+p,blue,"modern, amekaji"
+s,blue,"modern, amekaji"
+sf,blue,minimum
+v,blue,casual
+b,purple,casual
+d,purple,"elegant, retro"
+dk,purple,"classic, retro"
+dkg,purple,classic
+dp,purple,"classic, ethnic, retro"
+g,purple,retro
+lf,purple,casual
+ltg,purple,"casual, elegant"
+p,purple,lovely
+s,purple,elegant
+sf,purple,elegant
+v,purple,casual
+b,white,"minimum, casual"
+d,white,casual
+dk,white,casual
+dkg,white,casual
+dp,white,casual
+g,white,casual
+lf,white,"minimum, modern, casual"
+ltg,white,"modern, casual"
+p,white,"lovely, modern, casual"
+s,white,casual
+sf,white,"minimum, casual"
+v,white,casual
+b,gray,minimum
+d,gray,elegant
+dk,gray,classic
+dkg,gray,classic
+dp,gray,classic
+g,gray,"elegant, classic"
+lf,gray,"minimum, modern"
+ltg,gray,modern
+p,gray,"lovely, modern"
+s,gray,elegant
+sf,gray,"minimum, elegant"
+v,gray,x
+b,black,rockchic
+d,black,rockchic
+dk,black,"classic, rockchic"
+dkg,black,"classic, rockchic"
+dp,black,"classic, rockchic"
+g,black,rockchic
+lf,black,"modern, rockchic"
+ltg,black,"modern, rockchic"
+p,black,"modern, rockchic"
+s,black,rockchic
+sf,black,rockchic
+v,black,x

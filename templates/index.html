@@ -45,8 +45,10 @@
                 let html = '';
                 for (var i in resultcolors) {
                     html +=
-                        "<input type='radio' class='btn-check col-4 m-0' name='options' id='option" +
+                        "<input type='radio' class='btn-check col-4 m-0' name='colors' id='option" +
                         i +
+                        "' value='" +
+                        resultcolors[i].code +
                         "'><label class='btn col-4 btn-outline-dark' for='option" +
                         i +
                         "'style='background-color:#" +
@@ -56,9 +58,7 @@
                         '</label>';
                 }
                 html +=
-                    "<div id='checkwrap' class='col-12 mx-0 p-0 form-check form-switch'><input class='form-check-input m-0 w-50 h-100' type='checkbox' role='switch' id='flexSwitchCheckDefault'><label class='form-check-label' for='flexSwitchCheckDefault'></label>";
-                html +=
-                    "<button type='button' id='analysis' class='btn btn-success w-50 h-100'>R U N</button></div>";
+                    "<div id='checkwrap' class='col-12 mx-0 p-0'><button type='button' id='analysis' class='btn btn-success w-100 h-100' onclick ='recommendAPI();'>Analysis R U N</button></div>";
                 document.getElementById('resultcolor').innerHTML = html;
                 document.getElementById('resultloding').style.display = 'none';
                 document.getElementById('resultcolor').style.display = 'flex';
@@ -71,7 +71,7 @@
                 if (input.files && input.files[0]) {
                     const formData = new FormData();
                     formData.append('file', input.files[0], input.files[0].name);
-                    fetch('https://okhfastapi.run.goorm.io/averagecolors', {
+                    fetch('https://newofmc-lllpt.run.goorm.io/averagecolors', {
                         method: 'POST',
                         body: formData,
                     })
@@ -92,30 +92,10 @@
                         });
                 }
             }
-            async function AnalysisAPI() {
-                document.getElementById('resultcolor').style.display = 'none';
-                document.getElementById('resultloding').innerHTML =
-                    "<div class='mosaic-loader p-0'><div class='cell d-0'></div><div class='cell d-1'></div><div class='cell d-2'></div><div class='cell d-3'></div><div class='cell d-1'></div><div class='cell d-2'></div><div class='cell d-3'></div><div class='cell d-4'></div><div class='cell d-2'></div><div class='cell d-3'></div><div class='cell d-4'></div><div class='cell d-5'></div><div class='cell d-3'></div><div class='cell d-4'></div><div class='cell d-5'></div><div class='cell d-6'></div></div>";
-                document.getElementById('resultloding').style.display = 'flex';
-                if () {
-                    fetch('https://okhfastapi.run.goorm.io/', {
-                        method: 'GET'
-                    })
-                        .then((response) => {
-                            if (response.status === 404) {
-                            } else if (response.status === 200) {
-                                return response.json();
-                            } else {
-                                alert('올바른 사진을 올려주시기 바랍니다.');
-                                throw new Error('Unexpected Http Status Code');
-                            }
-                        })
-                        .then((responseJson) => {
-                            appendresultcolor(responseJson);
-                        })
-                        .catch((error) => {
-                            console.log(error);
-                        });
+            function recommendAPI() {
+                const pickcolor = document.querySelector('input[name="colors"]:checked').value;
+                if (pickcolor) {
+                    
                 }
             }
         </script>
@@ -237,7 +217,7 @@
                             ></button>
                         </div>
                         <img
-                            src="http://okhfastapi.run.goorm.io/static/images/explanation1.gif"
+                            src="https://newofmc-lllpt.run.goorm.io/static/images/explanation1.gif"
                             class="offcanvas-body w-100 p-0"
                             alt="사용방법1"
                         />
@@ -256,7 +236,7 @@
                             ></button>
                         </div>
                         <img
-                            src="http://okhfastapi.run.goorm.io/static/images/explanation2.gif"
+                            src="https://newofmc-lllpt.run.goorm.io/static/images/explanation2.gif"
                             class="offcanvas-body w-100 p-0"
                             alt="사용방법2"
                         />
@@ -272,7 +252,7 @@
                  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
                  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
                 var disqus_config = function () {
-                    this.page.url = 'https://okhfastapi.run.goorm.io/'; // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.url = 'https://newofmc-lllpt.run.goorm.io/'; // Replace PAGE_URL with your page's canonical URL variable
                     this.page.identifier = 'ko'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
                 };
                 (function () {
