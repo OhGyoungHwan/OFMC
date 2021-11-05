@@ -8,6 +8,7 @@ from pydantic import BaseModel, Field
 from pymongo import MongoClient
 from bson import ObjectId
 import extractAvgColor
+import extractStyleColor
 
 
 app = FastAPI()
@@ -19,15 +20,18 @@ templates = Jinja2Templates(directory="templates")
 client = MongoClient("localhost", 27017)
 db = client["coloravg"]
 
+
 class PyObjectId(ObjectId):
     @classmethod
     def __get_validators__(cls):
         yield cls.validate
+
     @classmethod
     def validate(cls, v):
         if not ObjectId.is_valid(v):
             raise ValueError("Invalid objectid")
         return ObjectId(v)
+
     @classmethod
     def __modify_schema__(cls, field_schema):
         field_schema.update(type="string")
@@ -59,6 +63,7 @@ class pickcolor(BaseModel):
     tone: str
     base: str
     RGB: str
+
     class Config:
         arbitrary_types_allowed = True
         json_encoders = {ObjectId: str}
@@ -85,14 +90,28 @@ async def read_root(request: Request):
 
 @app.get("/recommendstyle/{colorcode}")
 async def read_user_item(colorcode: str):
+    extractioncolor = {}
     coll = db["color"]
     color = coll.find_one({'RGB': colorcode})
     tone = color['tone']
     base = color['base']
-    print(tone, base)
     coll = db["colors_recommend_styles"]
-    style = coll.find_one({'tone': 'p','base': 'white'})
-    print(style)
+    style = coll.find_one({'tone': tone, 'base': base})['style'].split(", ")
+
+    if base != "white" and base != "gray" and base != "black":
+        style += ["toneontone", "toneintone"]
+    elif base == "gray":
+        style += ["toneontone"]
+
+    for i in style:
+        colors = extractStyleColor.extractStyleColor(i, base, tone)
+        extractioncolor[i] = colors
+
+    coll = db["styles"]
+    for i in style:
+        exp = coll.find_one({'name': i})['exp']
+        extractioncolor[i+"exp"] = exp
+    return extractioncolor
 
 
 @app.post("/averagecolors", status_code=200)

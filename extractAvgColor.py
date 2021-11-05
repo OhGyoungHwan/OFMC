@@ -3,6 +3,7 @@ import numpy as np
 import cv2
 import math
 import pandas as pd
+import colorsys
 
 
 NUMBER_OF_COLORS = 6
@@ -35,8 +36,8 @@ def closecolor(x, y, z):
 
 
 def hsvtoxyz(h, s, v):
-    x = s*math.cos(2*math.pi*h/255)*v/255
-    y = s*math.sin(2*math.pi*h/255)*v/255
+    x = s*math.cos(2*math.pi*h/255)
+    y = s*math.sin(2*math.pi*h/255)
     z = v
     return x, y, z
 
@@ -89,3 +90,4 @@ def extractAvgColor(img):
         x, y, z = hsvtoxyz(h, s, v)
         colorlistall.append(closecolor(x, y, z))
     return colorlistall
+

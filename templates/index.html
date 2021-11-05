@@ -75,27 +75,43 @@
                         method: 'POST',
                         body: formData,
                     })
-                        .then((response) => {
-                            if (response.status === 404) {
-                            } else if (response.status === 200) {
-                                return response.json();
-                            } else {
-                                alert('올바른 사진을 올려주시기 바랍니다.');
-                                throw new Error('Unexpected Http Status Code');
-                            }
-                        })
-                        .then((responseJson) => {
-                            appendresultcolor(responseJson);
-                        })
-                        .catch((error) => {
-                            console.log(error);
-                        });
+                    .then((response) => {
+                        if (response.status === 404) {
+                        } else if (response.status === 200) {
+                            return response.json();
+                        } else {
+                            alert('올바른 사진을 올려주시기 바랍니다.');
+                            throw new Error('Unexpected Http Status Code');
+                        }
+                    })
+                    .then((responseJson) => {
+                        appendresultcolor(responseJson);
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                    });
                 }
             }
             function recommendAPI() {
                 const pickcolor = document.querySelector('input[name="colors"]:checked').value;
                 if (pickcolor) {
-                    
+                    fetch('https://newofmc-lllpt.run.goorm.io/recommendstyle/'+pickcolor)
+                    .then((response) => {
+                        if (response.status === 404) {
+                            alert('오류발생');
+                        } else if (response.status === 200) {
+                            return response.json();
+                        } else {
+                            alert('오류발생');
+                            throw new Error('Unexpected Http Status Code');
+                        }
+                    })
+                    .then((responseJson) => {
+                        console.log(responseJson);
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                    });
                 }
             }
         </script>
