@@ -41,6 +41,59 @@
         <script src="http://code.jquery.com/jquery-latest.min.js"></script>
         <script src="{{ url_for('static', path='/js/bootstrap.min.js') }}"></script>
         <script>
+            function appendrecommd(resultrecomend, pickcolor) {
+                let html = '<div class="accordion" id="accordionExample">';
+                var i=0;
+                for(style in resultrecomend.extractioncolor){
+                    var carouselcontent = "";
+                    let carouselactive = "active";
+                    for(color in resultrecomend.extractioncolor[style]){
+                        carouselcontent += `
+                            <div class="carousel-item ${carouselactive}">
+                                <div class="d-block w-100 text-center" style="background-color:#${resultrecomend.extractioncolor[style][color]}; height:20vw;">
+                                    <h5>${color}</h5>
+                                </div>
+                            </div>
+                        `
+                        carouselactive = "";
+                    }
+                    i++;
+                    html += `
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading${style}">
+                                <button class="accordion-button collapsed text-center fs-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${style}" aria-expanded="false" aria-controls="collapse${style}">
+                                    ${style}
+                                </button>
+                            </h2>
+                            <div id="collapse${style}" class="accordion-collapse collapse" aria-labelledby="heading${style}" data-bs-parent="#accordionExample">
+                                <div class="accordion-body text-center fs-6">
+                                    <strong>${resultrecomend.explanationstyle[style+"explanation"]}</strong><br>
+                                </div>
+                                <div>
+                                    <div class="d-block w-100" style="background-color:#${pickcolor}; height:20vw;">
+                                </div>
+                                <div id="carousel${style}" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-inner">
+                                        ${carouselcontent}
+                                    </div>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel${style}" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#carousel${style}" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }
+                html += '</div>';
+                document.getElementById('analysiscolor').innerHTML = html;
+                document.getElementById('resultloding').style.display = 'none';
+                document.getElementById('analysiscolor').style.display = 'flex';
+            }
             function appendresultcolor(resultcolors) {
                 let html = '';
                 for (var i in resultcolors) {
@@ -58,10 +111,16 @@
                         '</label>';
                 }
                 html +=
-                    "<div id='checkwrap' class='col-12 mx-0 p-0'><button type='button' id='analysis' class='btn btn-success w-100 h-100' onclick ='recommendAPI();'>Analysis R U N</button></div>";
+                    "<div id='checkwrap' class='col-12 mx-0 p-0'><button type='button' id='analysis' class='btn btn-success h-100 col-6' onclick ='recommendAPI();'>Analysis R U N</button><button type='button' id='analysis' class='btn btn-danger h-100 col-6' onclick ='averagecolorsretry();' id='liveToastBtn'>Retry</button></div>";
                 document.getElementById('resultcolor').innerHTML = html;
                 document.getElementById('resultloding').style.display = 'none';
                 document.getElementById('resultcolor').style.display = 'flex';
+            }
+            function averagecolorsretry(){
+                document.getElementById('resultcolor').style.display = 'none';
+                document.getElementById('image-upload-wrap').style.display = 'block';
+                var toast = new bootstrap.Toast(liveToast)
+                toast.show()
             }
             async function averagecolorsAPI(input) {
                 document.getElementById('image-upload-wrap').style.display = 'none';
@@ -75,43 +134,45 @@
                         method: 'POST',
                         body: formData,
                     })
-                    .then((response) => {
-                        if (response.status === 404) {
-                        } else if (response.status === 200) {
-                            return response.json();
-                        } else {
-                            alert('올바른 사진을 올려주시기 바랍니다.');
-                            throw new Error('Unexpected Http Status Code');
-                        }
-                    })
-                    .then((responseJson) => {
-                        appendresultcolor(responseJson);
-                    })
-                    .catch((error) => {
-                        console.log(error);
-                    });
+                        .then((response) => {
+                            if (response.status === 404) {
+                            } else if (response.status === 200) {
+                                return response.json();
+                            } else {
+                                alert('올바른 사진을 올려주시기 바랍니다.');
+                                throw new Error('Unexpected Http Status Code');
+                            }
+                        })
+                        .then((responseJson) => {
+                            appendresultcolor(responseJson);
+                        })
+                        .catch((error) => {
+                            console.log(error);
+                        });
                 }
             }
             function recommendAPI() {
+                document.getElementById('resultcolor').style.display = 'none';
+                document.getElementById('resultloding').style.display = 'flex';
                 const pickcolor = document.querySelector('input[name="colors"]:checked').value;
                 if (pickcolor) {
-                    fetch('https://newofmc-lllpt.run.goorm.io/recommendstyle/'+pickcolor)
-                    .then((response) => {
-                        if (response.status === 404) {
-                            alert('오류발생');
-                        } else if (response.status === 200) {
-                            return response.json();
-                        } else {
-                            alert('오류발생');
-                            throw new Error('Unexpected Http Status Code');
-                        }
-                    })
-                    .then((responseJson) => {
-                        console.log(responseJson);
-                    })
-                    .catch((error) => {
-                        console.log(error);
-                    });
+                    fetch('https://newofmc-lllpt.run.goorm.io/recommendstyle/' + pickcolor)
+                        .then((response) => {
+                            if (response.status === 404) {
+                                alert('오류발생');
+                            } else if (response.status === 200) {
+                                return response.json();
+                            } else {
+                                alert('오류발생');
+                                throw new Error('Unexpected Http Status Code');
+                            }
+                        })
+                        .then((responseJson) => {
+                            appendrecommd(responseJson, pickcolor);
+                        })
+                        .catch((error) => {
+                            console.log(error);
+                        });
                 }
             }
         </script>
@@ -146,11 +207,11 @@
         <div id="image-upload-wrap" class="mt-3 container w-100">
             <div class="row h-100 text-center position-relative justify-content-around">
                 <div class="w-100">
-                    <div id="image-upload" class="h-100">
+                    <div id="image-upload" class="h-100 position-relative">
                         <input
                             type="file"
                             accept="image/*"
-                            class="visually-hidden"
+                            class="position-absolute opacity-0 w-100 h-100 top-0 start-0"
                             id="inputGroupFile01"
                             onchange="averagecolorsAPI(this);"
                         />
@@ -185,7 +246,39 @@
         <!--로딩출력창-->
         <div id="resultcolor" class="row w-100 m-auto"></div>
         <!--색상결과출력창-->
-        <div id="analysiscolor" class="row w-100 m-auto"></div>
+        <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+          <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <strong class="me-auto">확인해주세요!</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                결과가 올바르지 않다면 다른사진을 선택해주세요. 옷에서 색이 잘보여야합니다(˵ ͡~ ͜ʖ ͡°˵)ﾉ
+            </div>
+          </div>
+        </div>
+        <script>
+            function openGallery(id) {
+                closeAll();
+                const gallery = document.getElementById('gallery-' + id);
+                const card = document.getElementById('card-' + id);
+                gallery.classList.add('Gallery--active');
+                card.classList.add('Card--active');
+            }
+
+            function closeAll() {
+                const galleryActv = document.querySelector('.Gallery--active');
+                const cardActv = document.querySelector('.Card--active');
+                if (galleryActv) {
+                    galleryActv.classList.remove('Gallery--active');
+                }
+                if (cardActv) {
+                    cardActv.classList.remove('Card--active');
+                }
+            }
+        </script>
+        <div id="analysiscolor" class="row w-100 m-auto">
+        </div>
         <!--분석결과출력창-->
         <div class="mt-3 container d-flex justify-content-center">
             <ins
@@ -198,70 +291,6 @@
             <script src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
         </div>
         <!--광고-->
-        <div class="mt-3 container justify-content-center">
-            <div class="row w-100 m-auto">
-                <div class="w-100 text-center">설명을 클릭하면 영상으로 볼 수 있습니다.</div>
-                <button
-                    type="button"
-                    class="btn text-left w-100"
-                    data-bs-toggle="offcanvas"
-                    data-bs-target="#explanation1"
-                    aria-controls="explanation1"
-                >
-                    1. <q>베이스가 될 옷</q> 사진을 올려주세요 <br />(옷의 주된 색이 많이
-                    보여야합니다. 다른 색이 많이 들어가면 결과가 올바르지 않을 수 있어요!)
-                </button>
-                <button
-                    type="button"
-                    class="btn text-left w-100 mt-1"
-                    data-bs-toggle="offcanvas"
-                    data-bs-target="#explanation2"
-                    aria-controls="explanation2"
-                >
-                    2. 출력되는 색상중에 <q>알맞은 색상버튼</q>을 선택해 주세요 <br />3. 그 후
-                    <q>확인</q>을 누르면 잠시후 결과가 나옵니다.
-                </button>
-                <div id="explanation1" class="offcanvas p-0" tabindex="-1" aria-hidden="true">
-                    <div class="text-center p-0">
-                        <div class="offcanvas-header">
-                            <h5 class="offcanvas-title" id="offcanvasLabel">설명1</h5>
-                            <button
-                                type="button"
-                                class="btn-close text-reset"
-                                data-bs-dismiss="offcanvas"
-                                aria-label="Close"
-                            ></button>
-                        </div>
-                        <img
-                            src="https://newofmc-lllpt.run.goorm.io/static/images/explanation1.gif"
-                            class="offcanvas-body w-100 p-0"
-                            alt="사용방법1"
-                        />
-                    </div>
-                </div>
-                <!--설명1확장용-->
-                <div id="explanation2" class="offcanvas p-0" tabindex="-1" aria-hidden="true">
-                    <div class="text-center p-0">
-                        <div class="offcanvas-header">
-                            <h5 class="offcanvas-title" id="offcanvasLabel">설명2</h5>
-                            <button
-                                type="button"
-                                class="btn-close text-reset"
-                                data-bs-dismiss="offcanvas"
-                                aria-label="Close"
-                            ></button>
-                        </div>
-                        <img
-                            src="https://newofmc-lllpt.run.goorm.io/static/images/explanation2.gif"
-                            class="offcanvas-body w-100 p-0"
-                            alt="사용방법2"
-                        />
-                    </div>
-                </div>
-                <!--설명2확장용-->
-            </div>
-        </div>
-        <!--설명-->
         <div id="disqus_thread" class="mt-3">
             <script>
                 /**

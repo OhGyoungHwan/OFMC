@@ -66,6 +66,7 @@ def triColor(base):
     elif base == "black":
         return ["black"]
 
+
 def similarTone(tone):
     if tone == "b":
         return ["s", "b"]
@@ -149,46 +150,46 @@ def extractStyleColor(style, base, tone):
             pcolor.append("black")
             pcolor.append("gray")
 
-        elif style == "elegant":    
+        elif style == "elegant":
             ptone += similarTone(tone)
             ptone.remove(tone)
             pcolor += similarColor(base)
             pcolor.remove(base)
             pcolor.append("gray")
 
-        elif style == "modern":    
+        elif style == "modern":
             ptone += [tone]
             pcolor += [base]
             pcolor.append("white")
             pcolor.append("gray")
             pcolor.append("black")
 
-        elif style == "ethnic":    
+        elif style == "ethnic":
             ptone += complementaryTone(tone)
             pcolor += triColor(base)
-            
-        elif style == "rockchic":    
+
+        elif style == "rockchic":
             ptone += ["b", "d", "dk", "dkg", "dp", "g", "lf", "ltg", "p", "s", "sf", "v"]
             pcolor += ["black"]
 
-        elif style == "amekaji":    
+        elif style == "amekaji":
             ptone += tone
             pcolor += similarColor(base)
 
-        elif style == "retro":    
+        elif style == "retro":
             ptone += similarTone(tone)
             pcolor += similarColor(base)
-        
-        elif style == "toneintone":    
+
+        elif style == "toneintone":
             ptone += [tone]
             pcolor += ["red", "orange", "yellow", "green", "blue", "purple"]
             pcolor.remove(base)
-        
-        elif style == "toneontone":    
+
+        elif style == "toneontone":
             ptone += similarTone(tone)
             pcolor += [base]
-    
-    for i in coll.find({"tone":{'$in':ptone},"base":{'$in':pcolor}}):
+
+    for i in coll.find({"tone": {'$in': ptone}, "base": {'$in': pcolor}}):
         returnRGB.append(i["RGB"])
 
     return returnRGB

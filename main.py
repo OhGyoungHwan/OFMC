@@ -91,6 +91,7 @@ async def read_root(request: Request):
 @app.get("/recommendstyle/{colorcode}")
 async def read_user_item(colorcode: str):
     extractioncolor = {}
+    explanationstyle = {}
     coll = db["color"]
     color = coll.find_one({'RGB': colorcode})
     tone = color['tone']
@@ -98,7 +99,7 @@ async def read_user_item(colorcode: str):
     coll = db["colors_recommend_styles"]
     style = coll.find_one({'tone': tone, 'base': base})['style'].split(", ")
 
-    if base != "white" and base != "gray" and base != "black":
+    if (base != "white" and base != "gray") and base != "black":
         style += ["toneontone", "toneintone"]
     elif base == "gray":
         style += ["toneontone"]
@@ -109,9 +110,12 @@ async def read_user_item(colorcode: str):
 
     coll = db["styles"]
     for i in style:
-        exp = coll.find_one({'name': i})['exp']
-        extractioncolor[i+"exp"] = exp
-    return extractioncolor
+        explanation = coll.find_one({'name': i})['exp']
+        explanationstyle[i+"explanation"] = explanation
+    return {
+        "extractioncolor": extractioncolor,
+        "explanationstyle": explanationstyle
+    }
 
 
 @app.post("/averagecolors", status_code=200)
