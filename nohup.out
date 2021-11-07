@@ -1,0 +1,405 @@
+INFO:     Will watch for changes in these directories: ['/workspace/newOFMC']
+INFO:     Uvicorn running on http://0.0.0.0:433 (Press CTRL+C to quit)
+INFO:     Started reloader process [1212] using watchgod
+INFO:     Started server process [1214]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Shutting down
+INFO:     Finished server process [1214]
+ERROR:    Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/starlette/routing.py", line 624, in lifespan
+    await receive()
+  File "/usr/local/lib/python3.7/site-packages/uvicorn/lifespan/on.py", line 135, in receive
+    return await self.receive_queue.get()
+  File "/usr/local/lib/python3.7/asyncio/queues.py", line 159, in get
+    await getter
+concurrent.futures._base.CancelledError
+
+INFO:     Stopping reloader process [1212]
+INFO:     Will watch for changes in these directories: ['/workspace/newOFMC']
+INFO:     Uvicorn running on http://0.0.0.0:433 (Press CTRL+C to quit)
+INFO:     Started reloader process [1251] using watchgod
+INFO:     Started server process [1253]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     172.17.0.1:51434 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51434 - "GET /static/favicon.ico HTTP/1.1" 304 Not Modified
+INFO:     Shutting down
+INFO:     Finished server process [1253]
+ERROR:    Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/starlette/routing.py", line 624, in lifespan
+    await receive()
+  File "/usr/local/lib/python3.7/site-packages/uvicorn/lifespan/on.py", line 135, in receive
+    return await self.receive_queue.get()
+  File "/usr/local/lib/python3.7/asyncio/queues.py", line 159, in get
+    await getter
+concurrent.futures._base.CancelledError
+
+INFO:     Stopping reloader process [1251]
+INFO:     Will watch for changes in these directories: ['/workspace/newOFMC']
+INFO:     Uvicorn running on http://0.0.0.0:433 (Press CTRL+C to quit)
+INFO:     Started reloader process [1292] using watchgod
+INFO:     Started server process [1297]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     172.17.0.1:52000 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52000 - "GET /static/favicon.ico HTTP/1.1" 304 Not Modified
+{"t":{"$date":"2021-11-07T05:08:32.713+00:00"},"s":"I",  "c":"CONTROL",  "id":23285,   "ctx":"main","msg":"Automatically disabling TLS 1.0, to force-enable TLS 1.0 specify --sslDisabledProtocols 'none'"}
+{"t":{"$date":"2021-11-07T05:08:32.729+00:00"},"s":"W",  "c":"ASIO",     "id":22601,   "ctx":"main","msg":"No TransportLayer configured during NetworkInterface startup"}
+{"t":{"$date":"2021-11-07T05:08:32.729+00:00"},"s":"I",  "c":"NETWORK",  "id":4648601, "ctx":"main","msg":"Implicit TCP FastOpen unavailable. If TCP FastOpen is required, set tcpFastOpenServer, tcpFastOpenClient, and tcpFastOpenQueueSize."}
+{"t":{"$date":"2021-11-07T05:08:32.734+00:00"},"s":"I",  "c":"STORAGE",  "id":4615611, "ctx":"initandlisten","msg":"MongoDB starting","attr":{"pid":1338,"port":27017,"dbPath":"/data/db","architecture":"64-bit","host":"goorm"}}
+{"t":{"$date":"2021-11-07T05:08:32.734+00:00"},"s":"W",  "c":"CONTROL",  "id":20720,   "ctx":"initandlisten","msg":"Available memory is less than system memory","attr":{"availableMemSizeMB":4096,"systemMemSizeMB":7731}}
+{"t":{"$date":"2021-11-07T05:08:32.734+00:00"},"s":"I",  "c":"CONTROL",  "id":23403,   "ctx":"initandlisten","msg":"Build Info","attr":{"buildInfo":{"version":"4.4.10","gitVersion":"58971da1ef93435a9f62bf4708a81713def6e88c","openSSLVersion":"OpenSSL 1.1.1  11 Sep 2018","modules":[],"allocator":"tcmalloc","environment":{"distmod":"ubuntu1804","distarch":"x86_64","target_arch":"x86_64"}}}}
+{"t":{"$date":"2021-11-07T05:08:32.734+00:00"},"s":"I",  "c":"CONTROL",  "id":51765,   "ctx":"initandlisten","msg":"Operating System","attr":{"os":{"name":"Ubuntu","version":"18.04"}}}
+{"t":{"$date":"2021-11-07T05:08:32.734+00:00"},"s":"I",  "c":"CONTROL",  "id":21951,   "ctx":"initandlisten","msg":"Options set by command line","attr":{"options":{}}}
+{"t":{"$date":"2021-11-07T05:08:32.741+00:00"},"s":"I",  "c":"STORAGE",  "id":22270,   "ctx":"initandlisten","msg":"Storage engine to use detected by data files","attr":{"dbpath":"/data/db","storageEngine":"wiredTiger"}}
+{"t":{"$date":"2021-11-07T05:08:32.741+00:00"},"s":"I",  "c":"STORAGE",  "id":22315,   "ctx":"initandlisten","msg":"Opening WiredTiger","attr":{"config":"create,cache_size=1536M,session_max=33000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000,close_scan_interval=10,close_handle_minimum=250),statistics_log=(wait=0),verbose=[recovery_progress,checkpoint_progress,compact_progress],"}}
+{"t":{"$date":"2021-11-07T05:08:34.971+00:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":"[1636261714:971839][1338:0x7fcf97574ac0], txn-recover: [WT_VERB_RECOVERY_PROGRESS] Recovering log 11 through 12"}}
+{"t":{"$date":"2021-11-07T05:08:35.083+00:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":"[1636261715:83086][1338:0x7fcf97574ac0], txn-recover: [WT_VERB_RECOVERY_PROGRESS] Recovering log 12 through 12"}}
+{"t":{"$date":"2021-11-07T05:08:35.282+00:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":"[1636261715:282801][1338:0x7fcf97574ac0], txn-recover: [WT_VERB_RECOVERY | WT_VERB_RECOVERY_PROGRESS] Main recovery loop: starting at 11/33280 to 12/256"}}
+{"t":{"$date":"2021-11-07T05:08:35.611+00:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":"[1636261715:611574][1338:0x7fcf97574ac0], txn-recover: [WT_VERB_RECOVERY_PROGRESS] Recovering log 11 through 12"}}
+{"t":{"$date":"2021-11-07T05:08:35.871+00:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":"[1636261715:871483][1338:0x7fcf97574ac0], txn-recover: [WT_VERB_RECOVERY_PROGRESS] Recovering log 12 through 12"}}
+{"t":{"$date":"2021-11-07T05:08:36.092+00:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":"[1636261716:92373][1338:0x7fcf97574ac0], txn-recover: [WT_VERB_RECOVERY | WT_VERB_RECOVERY_PROGRESS] Set global recovery timestamp: (0, 0)"}}
+{"t":{"$date":"2021-11-07T05:08:36.092+00:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":"[1636261716:92470][1338:0x7fcf97574ac0], txn-recover: [WT_VERB_RECOVERY | WT_VERB_RECOVERY_PROGRESS] Set global oldest timestamp: (0, 0)"}}
+{"t":{"$date":"2021-11-07T05:08:36.110+00:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":"[1636261716:110109][1338:0x7fcf97574ac0], WT_SESSION.checkpoint: [WT_VERB_CHECKPOINT_PROGRESS] saving checkpoint snapshot min: 1, snapshot max: 1 snapshot count: 0, oldest timestamp: (0, 0) , meta checkpoint timestamp: (0, 0) base write gen: 3384"}}
+{"t":{"$date":"2021-11-07T05:08:36.156+00:00"},"s":"I",  "c":"STORAGE",  "id":4795906, "ctx":"initandlisten","msg":"WiredTiger opened","attr":{"durationMillis":3415}}
+{"t":{"$date":"2021-11-07T05:08:36.156+00:00"},"s":"I",  "c":"RECOVERY", "id":23987,   "ctx":"initandlisten","msg":"WiredTiger recoveryTimestamp","attr":{"recoveryTimestamp":{"$timestamp":{"t":0,"i":0}}}}
+{"t":{"$date":"2021-11-07T05:08:36.162+00:00"},"s":"I",  "c":"STORAGE",  "id":4366408, "ctx":"initandlisten","msg":"No table logging settings modifications are required for existing WiredTiger tables","attr":{"loggingEnabled":true}}
+{"t":{"$date":"2021-11-07T05:08:36.185+00:00"},"s":"I",  "c":"STORAGE",  "id":22262,   "ctx":"initandlisten","msg":"Timestamp monitor starting"}
+{"t":{"$date":"2021-11-07T05:08:36.214+00:00"},"s":"W",  "c":"CONTROL",  "id":22120,   "ctx":"initandlisten","msg":"Access control is not enabled for the database. Read and write access to data and configuration is unrestricted","tags":["startupWarnings"]}
+{"t":{"$date":"2021-11-07T05:08:36.214+00:00"},"s":"W",  "c":"CONTROL",  "id":22138,   "ctx":"initandlisten","msg":"You are running this process as the root user, which is not recommended","tags":["startupWarnings"]}
+{"t":{"$date":"2021-11-07T05:08:36.214+00:00"},"s":"W",  "c":"CONTROL",  "id":22140,   "ctx":"initandlisten","msg":"This server is bound to localhost. Remote systems will be unable to connect to this server. Start the server with --bind_ip <address> to specify which IP addresses it should serve responses from, or with --bind_ip_all to bind to all interfaces. If this behavior is desired, start the server with --bind_ip 127.0.0.1 to disable this warning","tags":["startupWarnings"]}
+{"t":{"$date":"2021-11-07T05:08:36.214+00:00"},"s":"W",  "c":"CONTROL",  "id":22184,   "ctx":"initandlisten","msg":"Soft rlimits too low","attr":{"currentValue":1024,"recommendedMinimum":64000},"tags":["startupWarnings"]}
+{"t":{"$date":"2021-11-07T05:08:36.255+00:00"},"s":"I",  "c":"STORAGE",  "id":20536,   "ctx":"initandlisten","msg":"Flow Control is enabled on this deployment"}
+{"t":{"$date":"2021-11-07T05:08:36.283+00:00"},"s":"I",  "c":"FTDC",     "id":20625,   "ctx":"initandlisten","msg":"Initializing full-time diagnostic data capture","attr":{"dataDirectory":"/data/db/diagnostic.data"}}
+{"t":{"$date":"2021-11-07T05:08:36.283+00:00"},"s":"I",  "c":"REPL",     "id":6015317, "ctx":"initandlisten","msg":"Setting new configuration state","attr":{"newState":"ConfigReplicationDisabled","oldState":"ConfigPreStart"}}
+{"t":{"$date":"2021-11-07T05:08:36.285+00:00"},"s":"I",  "c":"NETWORK",  "id":23015,   "ctx":"listener","msg":"Listening on","attr":{"address":"/tmp/mongodb-27017.sock"}}
+{"t":{"$date":"2021-11-07T05:08:36.285+00:00"},"s":"I",  "c":"NETWORK",  "id":23015,   "ctx":"listener","msg":"Listening on","attr":{"address":"127.0.0.1"}}
+{"t":{"$date":"2021-11-07T05:08:36.285+00:00"},"s":"I",  "c":"NETWORK",  "id":23016,   "ctx":"listener","msg":"Waiting for connections","attr":{"port":27017,"ssl":"off"}}
+{"t":{"$date":"2021-11-07T05:08:37.362+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"127.0.0.1:39516","connectionId":1,"connectionCount":1}}
+{"t":{"$date":"2021-11-07T05:08:37.362+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"127.0.0.1:39518","connectionId":2,"connectionCount":2}}
+{"t":{"$date":"2021-11-07T05:08:37.369+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn2","msg":"client metadata","attr":{"remote":"127.0.0.1:39518","client":"conn2","doc":{"driver":{"name":"PyMongo","version":"3.12.1"},"os":{"type":"Linux","name":"Linux","architecture":"x86_64","version":"4.4.0-1128-aws"},"platform":"CPython 3.7.4.final.0"}}}
+{"t":{"$date":"2021-11-07T05:08:37.369+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn1","msg":"client metadata","attr":{"remote":"127.0.0.1:39516","client":"conn1","doc":{"driver":{"name":"PyMongo","version":"3.12.1"},"os":{"type":"Linux","name":"Linux","architecture":"x86_64","version":"4.4.0-1128-aws"},"platform":"CPython 3.7.4.final.0"}}}
+{"t":{"$date":"2021-11-07T05:08:38.274+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"127.0.0.1:39520","connectionId":3,"connectionCount":3}}
+{"t":{"$date":"2021-11-07T05:08:38.274+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"127.0.0.1:39522","connectionId":4,"connectionCount":4}}
+{"t":{"$date":"2021-11-07T05:08:38.276+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn4","msg":"client metadata","attr":{"remote":"127.0.0.1:39522","client":"conn4","doc":{"driver":{"name":"PyMongo","version":"3.12.1"},"os":{"type":"Linux","name":"Linux","architecture":"x86_64","version":"4.4.0-1128-aws"},"platform":"CPython 3.7.4.final.0"}}}
+{"t":{"$date":"2021-11-07T05:08:38.288+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn3","msg":"client metadata","attr":{"remote":"127.0.0.1:39520","client":"conn3","doc":{"driver":{"name":"PyMongo","version":"3.12.1"},"os":{"type":"Linux","name":"Linux","architecture":"x86_64","version":"4.4.0-1128-aws"},"platform":"CPython 3.7.4.final.0"}}}
+{"t":{"$date":"2021-11-07T05:09:36.187+00:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"WTCheckpointThread","msg":"WiredTiger message","attr":{"message":"[1636261776:187574][1338:0x7fcf89882700], WT_SESSION.checkpoint: [WT_VERB_CHECKPOINT_PROGRESS] saving checkpoint snapshot min: 3, snapshot max: 3 snapshot count: 0, oldest timestamp: (0, 0) , meta checkpoint timestamp: (0, 0) base write gen: 3384"}}
+{"t":{"$date":"2021-11-07T05:09:40.404+00:00"},"s":"I",  "c":"CONTROL",  "id":23377,   "ctx":"SignalHandler","msg":"Received signal","attr":{"signal":1,"error":"Hangup"}}
+{"t":{"$date":"2021-11-07T05:09:40.404+00:00"},"s":"I",  "c":"CONTROL",  "id":23378,   "ctx":"SignalHandler","msg":"Signal was sent by kill(2)","attr":{"pid":245,"uid":0}}
+{"t":{"$date":"2021-11-07T05:09:40.404+00:00"},"s":"I",  "c":"CONTROL",  "id":23381,   "ctx":"SignalHandler","msg":"will terminate after current cmd ends"}
+{"t":{"$date":"2021-11-07T05:09:40.404+00:00"},"s":"I",  "c":"REPL",     "id":4784900, "ctx":"SignalHandler","msg":"Stepping down the ReplicationCoordinator for shutdown","attr":{"waitTimeMillis":10000}}
+{"t":{"$date":"2021-11-07T05:09:40.404+00:00"},"s":"I",  "c":"COMMAND",  "id":4784901, "ctx":"SignalHandler","msg":"Shutting down the MirrorMaestro"}
+{"t":{"$date":"2021-11-07T05:09:40.405+00:00"},"s":"I",  "c":"SHARDING", "id":4784902, "ctx":"SignalHandler","msg":"Shutting down the WaitForMajorityService"}
+{"t":{"$date":"2021-11-07T05:09:40.405+00:00"},"s":"I",  "c":"CONTROL",  "id":4784903, "ctx":"SignalHandler","msg":"Shutting down the LogicalSessionCache"}
+{"t":{"$date":"2021-11-07T05:09:40.405+00:00"},"s":"I",  "c":"NETWORK",  "id":20562,   "ctx":"SignalHandler","msg":"Shutdown: going to close listening sockets"}
+{"t":{"$date":"2021-11-07T05:09:40.409+00:00"},"s":"I",  "c":"NETWORK",  "id":23017,   "ctx":"listener","msg":"removing socket file","attr":{"path":"/tmp/mongodb-27017.sock"}}
+{"t":{"$date":"2021-11-07T05:09:40.409+00:00"},"s":"I",  "c":"NETWORK",  "id":4784905, "ctx":"SignalHandler","msg":"Shutting down the global connection pool"}
+{"t":{"$date":"2021-11-07T05:09:40.409+00:00"},"s":"I",  "c":"STORAGE",  "id":4784906, "ctx":"SignalHandler","msg":"Shutting down the FlowControlTicketholder"}
+{"t":{"$date":"2021-11-07T05:09:40.409+00:00"},"s":"I",  "c":"-",        "id":20520,   "ctx":"SignalHandler","msg":"Stopping further Flow Control ticket acquisitions."}
+{"t":{"$date":"2021-11-07T05:09:40.409+00:00"},"s":"I",  "c":"STORAGE",  "id":4784908, "ctx":"SignalHandler","msg":"Shutting down the PeriodicThreadToAbortExpiredTransactions"}
+{"t":{"$date":"2021-11-07T05:09:40.410+00:00"},"s":"I",  "c":"STORAGE",  "id":4784934, "ctx":"SignalHandler","msg":"Shutting down the PeriodicThreadToDecreaseSnapshotHistoryCachePressure"}
+{"t":{"$date":"2021-11-07T05:09:40.411+00:00"},"s":"I",  "c":"REPL",     "id":4784909, "ctx":"SignalHandler","msg":"Shutting down the ReplicationCoordinator"}
+{"t":{"$date":"2021-11-07T05:09:40.411+00:00"},"s":"I",  "c":"SHARDING", "id":4784910, "ctx":"SignalHandler","msg":"Shutting down the ShardingInitializationMongoD"}
+{"t":{"$date":"2021-11-07T05:09:40.411+00:00"},"s":"I",  "c":"REPL",     "id":4784911, "ctx":"SignalHandler","msg":"Enqueuing the ReplicationStateTransitionLock for shutdown"}
+{"t":{"$date":"2021-11-07T05:09:40.411+00:00"},"s":"I",  "c":"-",        "id":4784912, "ctx":"SignalHandler","msg":"Killing all operations for shutdown"}
+{"t":{"$date":"2021-11-07T05:09:40.413+00:00"},"s":"I",  "c":"-",        "id":4695300, "ctx":"SignalHandler","msg":"Interrupted all currently running operations","attr":{"opsKilled":5}}
+{"t":{"$date":"2021-11-07T05:09:40.413+00:00"},"s":"I",  "c":"COMMAND",  "id":4784913, "ctx":"SignalHandler","msg":"Shutting down all open transactions"}
+{"t":{"$date":"2021-11-07T05:09:40.413+00:00"},"s":"I",  "c":"REPL",     "id":4784914, "ctx":"SignalHandler","msg":"Acquiring the ReplicationStateTransitionLock for shutdown"}
+{"t":{"$date":"2021-11-07T05:09:40.413+00:00"},"s":"I",  "c":"INDEX",    "id":4784915, "ctx":"SignalHandler","msg":"Shutting down the IndexBuildsCoordinator"}
+{"t":{"$date":"2021-11-07T05:09:40.413+00:00"},"s":"I",  "c":"REPL",     "id":4784916, "ctx":"SignalHandler","msg":"Reacquiring the ReplicationStateTransitionLock for shutdown"}
+{"t":{"$date":"2021-11-07T05:09:40.413+00:00"},"s":"I",  "c":"REPL",     "id":4784917, "ctx":"SignalHandler","msg":"Attempting to mark clean shutdown"}
+{"t":{"$date":"2021-11-07T05:09:40.413+00:00"},"s":"I",  "c":"NETWORK",  "id":4784918, "ctx":"SignalHandler","msg":"Shutting down the ReplicaSetMonitor"}
+{"t":{"$date":"2021-11-07T05:09:40.413+00:00"},"s":"I",  "c":"SHARDING", "id":4784921, "ctx":"SignalHandler","msg":"Shutting down the MigrationUtilExecutor"}
+{"t":{"$date":"2021-11-07T05:09:40.413+00:00"},"s":"I",  "c":"CONTROL",  "id":4784925, "ctx":"SignalHandler","msg":"Shutting down free monitoring"}
+{"t":{"$date":"2021-11-07T05:09:40.413+00:00"},"s":"I",  "c":"CONTROL",  "id":20609,   "ctx":"SignalHandler","msg":"Shutting down free monitoring"}
+{"t":{"$date":"2021-11-07T05:09:40.413+00:00"},"s":"I",  "c":"STORAGE",  "id":4784927, "ctx":"SignalHandler","msg":"Shutting down the HealthLog"}
+{"t":{"$date":"2021-11-07T05:09:40.413+00:00"},"s":"I",  "c":"STORAGE",  "id":4784929, "ctx":"SignalHandler","msg":"Acquiring the global lock for shutdown"}
+{"t":{"$date":"2021-11-07T05:09:40.413+00:00"},"s":"I",  "c":"STORAGE",  "id":4784930, "ctx":"SignalHandler","msg":"Shutting down the storage engine"}
+{"t":{"$date":"2021-11-07T05:09:40.413+00:00"},"s":"I",  "c":"STORAGE",  "id":22320,   "ctx":"SignalHandler","msg":"Shutting down journal flusher thread"}
+{"t":{"$date":"2021-11-07T05:09:40.413+00:00"},"s":"I",  "c":"STORAGE",  "id":22321,   "ctx":"SignalHandler","msg":"Finished shutting down journal flusher thread"}
+{"t":{"$date":"2021-11-07T05:09:40.413+00:00"},"s":"I",  "c":"STORAGE",  "id":20282,   "ctx":"SignalHandler","msg":"Deregistering all the collections"}
+{"t":{"$date":"2021-11-07T05:09:40.413+00:00"},"s":"I",  "c":"STORAGE",  "id":22261,   "ctx":"SignalHandler","msg":"Timestamp monitor shutting down"}
+{"t":{"$date":"2021-11-07T05:09:40.413+00:00"},"s":"I",  "c":"STORAGE",  "id":22317,   "ctx":"SignalHandler","msg":"WiredTigerKVEngine shutting down"}
+{"t":{"$date":"2021-11-07T05:09:40.413+00:00"},"s":"I",  "c":"STORAGE",  "id":22318,   "ctx":"SignalHandler","msg":"Shutting down session sweeper thread"}
+{"t":{"$date":"2021-11-07T05:09:40.413+00:00"},"s":"I",  "c":"STORAGE",  "id":22319,   "ctx":"SignalHandler","msg":"Finished shutting down session sweeper thread"}
+{"t":{"$date":"2021-11-07T05:09:40.413+00:00"},"s":"I",  "c":"STORAGE",  "id":22322,   "ctx":"SignalHandler","msg":"Shutting down checkpoint thread"}
+{"t":{"$date":"2021-11-07T05:09:40.413+00:00"},"s":"I",  "c":"STORAGE",  "id":22323,   "ctx":"SignalHandler","msg":"Finished shutting down checkpoint thread"}
+{"t":{"$date":"2021-11-07T05:09:40.413+00:00"},"s":"I",  "c":"STORAGE",  "id":4795902, "ctx":"SignalHandler","msg":"Closing WiredTiger","attr":{"closeConfig":"leak_memory=true,"}}
+{"t":{"$date":"2021-11-07T05:09:40.415+00:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"SignalHandler","msg":"WiredTiger message","attr":{"message":"[1636261780:415799][1338:0x7fcf90890700], close_ckpt: [WT_VERB_CHECKPOINT_PROGRESS] saving checkpoint snapshot min: 6, snapshot max: 6 snapshot count: 0, oldest timestamp: (0, 0) , meta checkpoint timestamp: (0, 0) base write gen: 3384"}}
+{"t":{"$date":"2021-11-07T05:09:40.419+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn3","msg":"Connection ended","attr":{"remote":"127.0.0.1:39520","connectionId":3,"connectionCount":3}}
+{"t":{"$date":"2021-11-07T05:09:40.419+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn4","msg":"Connection ended","attr":{"remote":"127.0.0.1:39522","connectionId":4,"connectionCount":2}}
+{"t":{"$date":"2021-11-07T05:09:40.538+00:00"},"s":"I",  "c":"STORAGE",  "id":4795901, "ctx":"SignalHandler","msg":"WiredTiger closed","attr":{"durationMillis":125}}
+{"t":{"$date":"2021-11-07T05:09:40.538+00:00"},"s":"I",  "c":"STORAGE",  "id":22279,   "ctx":"SignalHandler","msg":"shutdown: removing fs lock..."}
+{"t":{"$date":"2021-11-07T05:09:40.538+00:00"},"s":"I",  "c":"-",        "id":4784931, "ctx":"SignalHandler","msg":"Dropping the scope cache for shutdown"}
+{"t":{"$date":"2021-11-07T05:09:40.538+00:00"},"s":"I",  "c":"FTDC",     "id":4784926, "ctx":"SignalHandler","msg":"Shutting down full-time data capture"}
+{"t":{"$date":"2021-11-07T05:09:40.538+00:00"},"s":"I",  "c":"FTDC",     "id":20626,   "ctx":"SignalHandler","msg":"Shutting down full-time diagnostic data capture"}
+{"t":{"$date":"2021-11-07T05:09:40.542+00:00"},"s":"I",  "c":"CONTROL",  "id":20565,   "ctx":"SignalHandler","msg":"Now exiting"}
+{"t":{"$date":"2021-11-07T05:09:40.542+00:00"},"s":"I",  "c":"CONTROL",  "id":23138,   "ctx":"SignalHandler","msg":"Shutting down","attr":{"exitCode":0}}
+INFO:     172.17.0.1:52700 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52700 - "GET /static/favicon.ico HTTP/1.1" 304 Not Modified
+Kelp
+Seashell
+Woodrush
+Siam
+Star Dust
+Rangoon Green
+INFO:     172.17.0.1:52700 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53060 - "GET /recommendstyle/9F9F9C HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53734 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53734 - "GET /static/favicon.ico HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:53754 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53756 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55856 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55856 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55858 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55856 - "GET /static/favicon.ico HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:56018 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:56018 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:56018 - "GET /static/main.png HTTP/1.1" 200 OK
+INFO:     172.17.0.1:56032 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:56032 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:56032 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:56034 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:56034 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:57368 - "GET / HTTP/1.1" 200 OK
+카키색
+Vanilla
+Indian Khaki
+Zeus
+Rodeo Dust
+Sandrift
+INFO:     172.17.0.1:58042 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:59446 - "GET /recommendstyle/C9B29B HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51612 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51612 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51624 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51634 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51634 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51634 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51634 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+Woodrush
+Seashell
+Siam
+Rangoon Green
+Star Dust
+Kelp
+INFO:     172.17.0.1:51634 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53416 - "GET /recommendstyle/646A54 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53822 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53822 - "GET /static/favicon.ico HTTP/1.1" 304 Not Modified
+Vanilla
+카키색
+Indian Khaki
+Zeus
+Rodeo Dust
+Sandrift
+INFO:     172.17.0.1:54132 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:54132 - "GET /recommendstyle/AB917A HTTP/1.1" 200 OK
+INFO:     172.17.0.1:54722 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55468 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55468 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55478 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55480 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55478 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55828 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55828 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55848 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55850 - "GET /static/home.css HTTP/1.1" 200 OK
+Indian Khaki
+카키색
+Zeus
+Vanilla
+Sandrift
+Rodeo Dust
+INFO:     172.17.0.1:56530 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:59504 - "GET /recommendstyle/C3B091 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:34896 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:34896 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:34896 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+Sandrift
+Indian Khaki
+Zeus
+카키색
+Vanilla
+Rodeo Dust
+INFO:     172.17.0.1:36214 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:37990 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:38076 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:38076 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:36214 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:38078 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:36214 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:38078 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:38078 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:38296 - "GET /recommendstyle/D1BEA8 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:38556 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:38556 - "GET /static/css/bootstrap.min.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:38556 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+Indian Khaki
+카키색
+Vanilla
+Zeus
+Rodeo Dust
+Sandrift
+INFO:     172.17.0.1:38578 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:38590 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39446 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39446 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39446 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:38578 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:38578 - "GET /static/favicon.ico HTTP/1.1" 304 Not Modified
+WARNING:  WatchGodReload detected file change in '['/workspace/newOFMC/main.py']'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1297]
+INFO:     Started server process [2160]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     172.17.0.1:43404 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43404 - "GET /static/css/bootstrap.min.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:43404 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+Rodeo Dust
+카키색
+Indian Khaki
+Zeus
+Sandrift
+Vanilla
+INFO:     172.17.0.1:43746 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43756 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43756 - "GET /static/css/bootstrap.min.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:43746 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43756 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44846 - "GET /static/favicon.ico HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:45388 - "GET /recommendstyle/AB917A HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48936 - "GET /static/active.png HTTP/1.1" 404 Not Found
+INFO:     172.17.0.1:41994 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41994 - "GET /static/css/bootstrap.min.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:41994 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41994 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41994 - "GET /static/favicon.ico HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:42012 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42012 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42012 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42014 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42014 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42014 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42014 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     Will watch for changes in these directories: ['/workspace/newOFMC']
+INFO:     Uvicorn running on http://0.0.0.0:433 (Press CTRL+C to quit)
+INFO:     Started reloader process [6910] using watchgod
+INFO:     Stopping reloader process [6910]
+INFO:     Will watch for changes in these directories: ['/workspace/newOFMC']
+INFO:     Uvicorn running on http://0.0.0.0:433 (Press CTRL+C to quit)
+INFO:     Started reloader process [6920] using watchgod
+INFO:     Started server process [6925]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     172.17.0.1:43028 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43028 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43030 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43032 - "GET /static/home.css HTTP/1.1" 200 OK
+Seashell
+Kelp
+Woodrush
+Star Dust
+Rangoon Green
+Siam
+INFO:     172.17.0.1:43030 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43032 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43046 - "GET /static/css/bootstrap.min.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:43048 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+Dune
+Satin Linen
+Roman Coffee
+Tussock
+Oil
+Star Dust
+INFO:     172.17.0.1:43036 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43046 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43048 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43048 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43048 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43048 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43048 - "GET /static/favicon.ico HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:43048 - "GET / HTTP/1.1" 200 OK
+Seashell
+Kelp
+Woodrush
+Rangoon Green
+Siam
+시멘트색
+INFO:     172.17.0.1:43112 - "POST /averagecolors HTTP/1.1" 200 OK
+Star Dust
+세피아
+Suva Gray
+Silver Sand
+Silver Chalice
+Flint
+INFO:     172.17.0.1:43114 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43114 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43114 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43132 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43114 - "GET / HTTP/1.1" 200 OK
+Kelp
+Swiss Coffee
+Rangitoto
+Almond Frost
+Siam
+Kelp
+INFO:     172.17.0.1:43138 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43138 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43138 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43138 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+Sea Green
+De York
+Sea Green
+Aqua Forest
+Sea Green
+Chateau Green
+INFO:     172.17.0.1:43192 - "POST /averagecolors HTTP/1.1" 200 OK
+흰색
+Woodsmoke
+Mine Shaft
+Sand Dune
+Dodger Blue
+Silver Sand
+INFO:     172.17.0.1:43302 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43582 - "GET /recommendstyle/2E8B57 HTTP/1.1" 200 OK
+WARNING:  WatchGodReload detected file change in '['/workspace/newOFMC/extractAvgColor.py']'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [6925]
+INFO:     Started server process [7847]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     172.17.0.1:44304 - "GET / HTTP/1.1" 200 OK
+Thatch Green
+Seashell
+Siam
+Rangoon Green
+Silver Chalice
+Kelp
+INFO:     172.17.0.1:44304 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44304 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44458 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44514 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44514 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44514 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+황토색
+Bastille
+Iceberg
+Cognac
+커피색
+카키색
+INFO:     172.17.0.1:44516 - "POST /averagecolors HTTP/1.1" 200 OK
+WARNING:  WatchGodReload detected file change in '['/workspace/newOFMC/extractAvgColor.py']'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [7847]
+INFO:     Started server process [7904]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.

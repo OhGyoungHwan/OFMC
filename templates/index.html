@@ -12,23 +12,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta
             name="description"
-            content="사이트를 통해서 다양한 색상 조합을 찾을 수 있습니다. 베이스 색상으로 올려주면 설명이 나와요!!"
+            content="오늘입을 옷한가지를 정하고 나머지 옷의 색상을 추천받아보세요. (੭•̀ᴗ•̀)੭"
         />
         <meta property="og:title" content="옷컬러조합" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://coloravg.run.goorm.io/" />
-        <meta property="og:image" content="https://coloravg.run.goorm.io/static/active.png" />
+        <meta property="og:image" content="https://coloravg.run.goorm.io/static/main.png" />
         <meta
             property="og:description"
-            content="저희 사이트는 옷색상조합에 최적화되어 바쁜아침, 쇼핑에 도움을 줍니다!"
+            content="바쁜출근길 더 이상 옷고민으로 시간 낭비 하지말아요. (･`◡´･)ゝ"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <meta name="title" content="옷컬러조합 찾기" />
-        <meta name="subject" content="2장의 사진을 이용해 찾는 최고의 옷색조합" />
+        <meta name="title" content="옷깔맞춤" />
+        <meta name="subject" content="내옷을 통한 완벽한 색상추천" />
         <meta
             name="keywords"
-            content="옷깔맞춤, 옷컬러, 뭐입지, 색상조합, 컬러조합, 옷 색상표, 색상매치, 컬러, 코디, 패션, 색상 매치, 상하의 매치, 옷컬러조합 찾기 사이트"
+            content="옷깔맞춤, 옷색상, 코디추천, 색상조합, 컬러조합, 옷 색상표, 색상매치, 컬러, 코디, 패션, 상하의 매치"
         />
         <meta name="author" content="오경환" />
         <link rel="canonical" href="https://coloravg.run.goorm.io/" />
@@ -43,19 +43,19 @@
         <script>
             function appendrecommd(resultrecomend, pickcolor) {
                 let html = '<div class="accordion" id="accordionExample">';
-                var i=0;
-                for(style in resultrecomend.extractioncolor){
-                    var carouselcontent = "";
-                    let carouselactive = "active";
-                    for(color in resultrecomend.extractioncolor[style]){
+                var i = 0;
+                for (style in resultrecomend.extractioncolor) {
+                    var carouselcontent = '';
+                    let carouselactive = 'active';
+                    for (color in resultrecomend.extractioncolor[style]) {
                         carouselcontent += `
                             <div class="carousel-item ${carouselactive}">
                                 <div class="d-block w-100 text-center" style="background-color:#${resultrecomend.extractioncolor[style][color]}; height:20vw;">
                                     <h5>${color}</h5>
                                 </div>
                             </div>
-                        `
-                        carouselactive = "";
+                        `;
+                        carouselactive = '';
                     }
                     i++;
                     html += `
@@ -67,7 +67,9 @@
                             </h2>
                             <div id="collapse${style}" class="accordion-collapse collapse" aria-labelledby="heading${style}" data-bs-parent="#accordionExample">
                                 <div class="accordion-body text-center fs-6">
-                                    <strong>${resultrecomend.explanationstyle[style+"explanation"]}</strong><br>
+                                    <strong>${
+                                        resultrecomend.explanationstyle[style + 'explanation']
+                                    }</strong><br>
                                 </div>
                                 <div>
                                     <div class="d-block w-100" style="background-color:#${pickcolor}; height:20vw;">
@@ -116,11 +118,11 @@
                 document.getElementById('resultloding').style.display = 'none';
                 document.getElementById('resultcolor').style.display = 'flex';
             }
-            function averagecolorsretry(){
+            function averagecolorsretry() {
                 document.getElementById('resultcolor').style.display = 'none';
                 document.getElementById('image-upload-wrap').style.display = 'block';
-                var toast = new bootstrap.Toast(liveToast)
-                toast.show()
+                var toast = new bootstrap.Toast(liveToast);
+                toast.show();
             }
             async function averagecolorsAPI(input) {
                 document.getElementById('image-upload-wrap').style.display = 'none';
@@ -130,7 +132,7 @@
                 if (input.files && input.files[0]) {
                     const formData = new FormData();
                     formData.append('file', input.files[0], input.files[0].name);
-                    fetch('https://newofmc-lllpt.run.goorm.io/averagecolors', {
+                    await fetch('https://coloravg.run.goorm.io/averagecolors', {
                         method: 'POST',
                         body: formData,
                     })
@@ -156,7 +158,7 @@
                 document.getElementById('resultloding').style.display = 'flex';
                 const pickcolor = document.querySelector('input[name="colors"]:checked').value;
                 if (pickcolor) {
-                    fetch('https://newofmc-lllpt.run.goorm.io/recommendstyle/' + pickcolor)
+                    fetch('https://coloravg.run.goorm.io/recommendstyle/' + pickcolor)
                         .then((response) => {
                             if (response.status === 404) {
                                 alert('오류발생');
@@ -179,7 +181,7 @@
         <!--API통신-->
         <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Navbar</a>
+                <a class="navbar-brand" href="#">옷깔맞춤</a>
                 <button
                     class="navbar-toggler"
                     type="button"
@@ -194,10 +196,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active" aria-current="page" href="/">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
+                            <a class="nav-link" href="https://github.com/OhGyoungHwan/OFMC">Github</a>
                         </li>
                     </ul>
                 </div>
@@ -246,16 +248,22 @@
         <!--로딩출력창-->
         <div id="resultcolor" class="row w-100 m-auto"></div>
         <!--색상결과출력창-->
-        <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
-          <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="toast-header">
-                <strong class="me-auto">확인해주세요!</strong>
-                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11;">
+            <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <strong class="me-auto">확인해주세요!</strong>
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="toast"
+                        aria-label="Close"
+                    ></button>
+                </div>
+                <div class="toast-body">
+                    결과가 올바르지 않다면 다른사진을 선택해주세요. 옷에서 색이 잘보여야합니다(˵ ͡~ ͜ʖ
+                    ͡°˵)ﾉ
+                </div>
             </div>
-            <div class="toast-body">
-                결과가 올바르지 않다면 다른사진을 선택해주세요. 옷에서 색이 잘보여야합니다(˵ ͡~ ͜ʖ ͡°˵)ﾉ
-            </div>
-          </div>
         </div>
         <script>
             function openGallery(id) {
@@ -277,8 +285,7 @@
                 }
             }
         </script>
-        <div id="analysiscolor" class="row w-100 m-auto">
-        </div>
+        <div id="analysiscolor" class="row w-100 m-auto"></div>
         <!--분석결과출력창-->
         <div class="mt-3 container d-flex justify-content-center">
             <ins
@@ -297,7 +304,7 @@
                  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
                  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
                 var disqus_config = function () {
-                    this.page.url = 'https://newofmc-lllpt.run.goorm.io/'; // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.url = 'https://coloravg.run.goorm.io/'; // Replace PAGE_URL with your page's canonical URL variable
                     this.page.identifier = 'ko'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
                 };
                 (function () {
