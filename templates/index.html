@@ -135,79 +135,84 @@
                 var toast = new bootstrap.Toast(liveToast2);
                 toast.show();
             }
+            
+            function errtyperetry() {
+                document.getElementById('resultloding').style.display = 'none';
+                document.getElementById('image-upload-wrap').style.display = 'block';
+            }
 
             function manualliveToast() {
                 var toast = new bootstrap.Toast(liveToast3);
                 toast.show();
             }
-            
-            const load_image = e => {
-              const files = e.files;
-              const filesArr = Array.prototype.slice.call(files);
-              // 여러장의 이미지를 불러올 경우, 배열화
 
-              filesArr.forEach(file => {
-                const reader = new FileReader();
-                reader.onload = e => {
-                    const image = new Image();
-                    image.className = "img-item"; // 스타일 적용을 위해
-                    image.src = e.target.result;
-                    image.onload = imageEvent => {
-                      // 이미지가 로드가 되면! 리사이즈 함수가 실행되도록 합니다.
-                      resize_image(image);
-                  };
-                };
-                reader.readAsDataURL(file);
-              });
+            const load_image = (e) => {
+                const files = e.files;
+                const filesArr = Array.prototype.slice.call(files);
+                // 여러장의 이미지를 불러올 경우, 배열화
+
+                filesArr.forEach((file) => {
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        const image = new Image();
+                        image.className = 'img-item'; // 스타일 적용을 위해
+                        image.src = e.target.result;
+                        image.onload = (imageEvent) => {
+                            // 이미지가 로드가 되면! 리사이즈 함수가 실행되도록 합니다.
+                            resize_image(image);
+                        };
+                    };
+                    reader.readAsDataURL(file);
+                });
             };
 
-            const resize_image = async image => {
-              let canvas = document.createElement("canvas"),
-                max_size = 200,
-                // 최대 기준을 1280으로 잡음.
-                width = image.width,
-                height = image.height;
+            const resize_image = async (image) => {
+                let canvas = document.createElement('canvas'),
+                    max_size = 200,
+                    // 최대 기준을 1280으로 잡음.
+                    width = image.width,
+                    height = image.height;
 
-              if (width > height) {
-                // 가로가 길 경우
-                if (width > max_size) {
-                  height *= max_size / width;
-                  width = max_size;
+                if (width > height) {
+                    // 가로가 길 경우
+                    if (width > max_size) {
+                        height *= max_size / width;
+                        width = max_size;
+                    }
+                } else {
+                    // 세로가 길 경우
+                    if (height > max_size) {
+                        width *= max_size / height;
+                        height = max_size;
+                    }
                 }
-              } else {
-                // 세로가 길 경우
-                if (height > max_size) {
-                  width *= max_size / height;
-                  height = max_size;
-                }
-              }
-              canvas.width = width;
-              canvas.height = height;
-              canvas.getContext("2d").drawImage(image, 0, 0, width, height);
-              const dataUrl = canvas.toDataURL("image/jpeg");
-              const imageValue = dataURLToBlob(dataUrl);
-              var file = new File([imageValue], "name.jpg", {type:"image/jpeg"});
+                canvas.width = width;
+                canvas.height = height;
+                canvas.getContext('2d').drawImage(image, 0, 0, width, height);
+                const dataUrl = canvas.toDataURL('image/jpeg');
+                const imageValue = dataURLToBlob(dataUrl);
+                var file = new File([imageValue], 'name.jpg', { type: 'image/jpeg' });
                 const formData = new FormData();
-                    formData.append('file', file, file.name);
-                    await fetch('https://coloravg.run.goorm.io/averagecolors', {
-                        method: 'POST',
-                        body: formData,
+                formData.append('file', file, file.name);
+                await fetch('https://coloravg.run.goorm.io/averagecolors', {
+                    method: 'POST',
+                    body: formData,
+                })
+                    .then((response) => {
+                        if (response.status === 404) {
+                        } else if (response.status === 200) {
+                            return response.json();
+                        } else {
+                            alert('올바른 사진을 올려주시기 바랍니다.');
+                            throw new Error('Unexpected Http Status Code');
+                        }
                     })
-                        .then((response) => {
-                            if (response.status === 404) {
-                            } else if (response.status === 200) {
-                                return response.json();
-                            } else {
-                                alert('올바른 사진을 올려주시기 바랍니다.');
-                                throw new Error('Unexpected Http Status Code');
-                            }
-                        })
-                        .then((responseJson) => {
-                            appendresultcolor(responseJson);
-                        })
-                        .catch((error) => {
-                            console.log(error);
-                        });
+                    .then((responseJson) => {
+                        appendresultcolor(responseJson);
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                    });
             };
 
             const dataURLToBlob = (dataURL) => {
@@ -234,17 +239,23 @@
                     type: contentType,
                 });
             };
-            
+
             async function averagecolorsAPI(input) {
                 document.getElementById('image-upload-wrap').style.display = 'none';
                 document.getElementById('resultloding').innerHTML =
                     "<div class='mosaic-loader p-0'><div class='cell d-0'></div><div class='cell d-1'></div><div class='cell d-2'></div><div class='cell d-3'></div><div class='cell d-1'></div><div class='cell d-2'></div><div class='cell d-3'></div><div class='cell d-4'></div><div class='cell d-2'></div><div class='cell d-3'></div><div class='cell d-4'></div><div class='cell d-5'></div><div class='cell d-3'></div><div class='cell d-4'></div><div class='cell d-5'></div><div class='cell d-6'></div></div>";
                 document.getElementById('resultloding').style.display = 'flex';
                 if (input.files && input.files[0]) {
-                    var e = load_image(input);
+                    if(input.files[0].type.indexOf("image")!=-1){
+                        var e = load_image(input);
+                    }
+                    else{
+                        alert('올바른 사진을 올려주시기 바랍니다.');
+                        errtyperetry();
+                    }
                 }
             }
-            
+
             function recommendAPI() {
                 document.getElementById('resultcolor').style.display = 'none';
                 document.getElementById('resultloding').style.display = 'flex';
@@ -290,7 +301,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <ul class="navbar-nav w-100 mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="/">Home</a>
                         </li>
@@ -299,14 +310,28 @@
                                 >Github</a
                             >
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item ms-auto">
                             <a
                                 class="nav-link"
                                 type="button"
                                 id="manualliveToastBtn"
                                 onclick="manualliveToast();"
-                                >Manual</a
-                            >
+                                ><svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    fill="currentColor"
+                                    class="bi bi-question-square"
+                                    viewBox="0 0 16 16"
+                                >
+                                    <path
+                                        d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"
+                                    />
+                                    <path
+                                        d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"
+                                    />
+                                </svg>
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -365,10 +390,10 @@
                 role="alert"
                 aria-live="assertive"
                 aria-atomic="true"
-                data-bs-delay="10000"
+                data-bs-delay="100000"
             >
                 <div class="toast-header">
-                    <strong class="me-auto">먼저 사진을 올려봅시다.⸜(*ˊᗜˋ*)⸝</strong>
+                    <strong class="me-auto">어떻게 사용하나요?⸜(*ˊᗜˋ*)⸝</strong>
                     <button
                         type="button"
                         class="btn-close"
@@ -377,9 +402,7 @@
                     ></button>
                 </div>
                 <div class="toast-body">
-                    PC : 드로그 앤 드롭 혹은 여기를 클릭해서 사진을 넣어주세요. 모바일: 여기를
-                    클릭해서 사진을 촬영하거나 이미 있는 사진을 넣어주세요. !약 10초정도의 시간이
-                    걸립니다!
+                    <img src="{{ url_for('static', path='/manual.gif') }}" class="img-fluid">
                 </div>
             </div>
         </div>
