@@ -1,6 +1,6 @@
 from pymongo import MongoClient
 
-client = MongoClient("localhost", 27017)
+client = MongoClient("0.0.0.0", 27017)
 db = client["coloravg"]
 coll = db["color"]
 

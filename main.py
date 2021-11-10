@@ -7,6 +7,7 @@ from typing import Optional
 from pydantic import BaseModel, Field
 from pymongo import MongoClient
 from bson import ObjectId
+from fastapi.responses import RedirectResponse
 import extractAvgColor
 import extractStyleColor
 
@@ -17,7 +18,7 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 
 templates = Jinja2Templates(directory="templates")
 
-client = MongoClient("localhost", 27017)
+client = MongoClient("0.0.0.0", 27017)
 db = client["coloravg"]
 
 
@@ -81,6 +82,16 @@ class pickcolor(BaseModel):
                 "RGB": "FFFFFF",
             }
         }
+
+
+@app.get("/robots.txt")
+async def read_robots():
+    return RedirectResponse("https://coloravg.run.goorm.io/static/robots.txt")
+
+
+@app.get("/sitemap.xml")
+async def read_robots_1():
+    return RedirectResponse("https://coloravg.run.goorm.io/static/sitemap.xml")
 
 
 @app.get("/", response_class=HTMLResponse)

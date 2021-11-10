@@ -403,3 +403,2539 @@ INFO:     Finished server process [7847]
 INFO:     Started server process [7904]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
+INFO:     172.17.0.1:52182 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52182 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52184 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52186 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52184 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+Delta
+Abbey
+Nevada
+Alto
+Shark
+Golden Grass
+INFO:     172.17.0.1:52292 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52522 - "GET /recommendstyle/DBDBDB HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.7/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/site-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.7/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.7/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.7/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.7/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.7/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.7/site-packages/fastapi/routing.py", line 227, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.7/site-packages/fastapi/routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "./main.py", line 96, in read_user_item
+    color = coll.find_one({'RGB': colorcode})
+  File "/usr/local/lib/python3.7/site-packages/pymongo/collection.py", line 1328, in find_one
+    for result in cursor.limit(-1):
+  File "/usr/local/lib/python3.7/site-packages/pymongo/cursor.py", line 1238, in next
+    if len(self.__data) or self._refresh():
+  File "/usr/local/lib/python3.7/site-packages/pymongo/cursor.py", line 1130, in _refresh
+    self.__session = self.__collection.database.client._ensure_session()
+  File "/usr/local/lib/python3.7/site-packages/pymongo/mongo_client.py", line 1935, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "/usr/local/lib/python3.7/site-packages/pymongo/mongo_client.py", line 1883, in __start_session
+    server_session = self._get_server_session()
+  File "/usr/local/lib/python3.7/site-packages/pymongo/mongo_client.py", line 1921, in _get_server_session
+    return self._topology.get_server_session()
+  File "/usr/local/lib/python3.7/site-packages/pymongo/topology.py", line 520, in get_server_session
+    session_timeout = self._check_session_support()
+  File "/usr/local/lib/python3.7/site-packages/pymongo/topology.py", line 502, in _check_session_support
+    None)
+  File "/usr/local/lib/python3.7/site-packages/pymongo/topology.py", line 220, in _select_servers_loop
+    (self._error_message(selector), timeout, self.description))
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 111] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 6187939e08e2869bc0548a9a, topology_type: Single, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 111] Connection refused')>]>
+INFO:     172.17.0.1:51322 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51322 - "GET /static/css/bootstrap.min.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:51348 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+Seashell
+Kelp
+Woodrush
+Siam
+시멘트색
+Rangoon Green
+INFO:     172.17.0.1:51348 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52556 - "GET /recommendstyle/A1A2A4 HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.7/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/site-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.7/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.7/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.7/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.7/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.7/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.7/site-packages/fastapi/routing.py", line 227, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.7/site-packages/fastapi/routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "./main.py", line 96, in read_user_item
+    color = coll.find_one({'RGB': colorcode})
+  File "/usr/local/lib/python3.7/site-packages/pymongo/collection.py", line 1328, in find_one
+    for result in cursor.limit(-1):
+  File "/usr/local/lib/python3.7/site-packages/pymongo/cursor.py", line 1238, in next
+    if len(self.__data) or self._refresh():
+  File "/usr/local/lib/python3.7/site-packages/pymongo/cursor.py", line 1130, in _refresh
+    self.__session = self.__collection.database.client._ensure_session()
+  File "/usr/local/lib/python3.7/site-packages/pymongo/mongo_client.py", line 1935, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "/usr/local/lib/python3.7/site-packages/pymongo/mongo_client.py", line 1883, in __start_session
+    server_session = self._get_server_session()
+  File "/usr/local/lib/python3.7/site-packages/pymongo/mongo_client.py", line 1921, in _get_server_session
+    return self._topology.get_server_session()
+  File "/usr/local/lib/python3.7/site-packages/pymongo/topology.py", line 520, in get_server_session
+    session_timeout = self._check_session_support()
+  File "/usr/local/lib/python3.7/site-packages/pymongo/topology.py", line 502, in _check_session_support
+    None)
+  File "/usr/local/lib/python3.7/site-packages/pymongo/topology.py", line 220, in _select_servers_loop
+    (self._error_message(selector), timeout, self.description))
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 111] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 6187939e08e2869bc0548a9a, topology_type: Single, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 111] Connection refused')>]>
+INFO:     172.17.0.1:52844 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52854 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52854 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52854 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52844 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52844 - "GET /static/favicon.ico HTTP/1.1" 304 Not Modified
+Rangoon Green
+Seashell
+Siam
+Kelp
+Woodrush
+시멘트색
+INFO:     172.17.0.1:55058 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:56258 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:56258 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55058 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:57804 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:57804 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:57806 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:58870 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:58870 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:58890 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+Siam
+Seashell
+Rangoon Green
+Woodrush
+Star Dust
+Kelp
+INFO:     172.17.0.1:59222 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:59222 - "GET /recommendstyle/9F9F9C HTTP/1.1" 200 OK
+INFO:     172.17.0.1:60280 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:60280 - "GET /robots.txt HTTP/1.1" 404 Not Found
+INFO:     172.17.0.1:60280 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:60280 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+WARNING:  WatchGodReload detected file change in '['/workspace/newOFMC/main.py']'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [7904]
+WARNING:  WatchGodReload detected file change in '['/workspace/newOFMC/main.py']'. Reloading...
+INFO:     Started server process [8670]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchGodReload detected file change in '['/workspace/newOFMC/main.py']'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [8670]
+INFO:     Started server process [8699]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     172.17.0.1:60756 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:60756 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:60766 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:60862 - "GET /robots.txt HTTP/1.1" 307 Temporary Redirect
+INFO:     172.17.0.1:60862 - "GET /static/robots.txt HTTP/1.1" 200 OK
+INFO:     172.17.0.1:60896 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:60896 - "GET /static/main.png HTTP/1.1" 200 OK
+INFO:     172.17.0.1:32856 - "GET /sitemap.xml HTTP/1.1" 307 Temporary Redirect
+INFO:     172.17.0.1:32856 - "GET /static/sitemap.xml HTTP/1.1" 200 OK
+INFO:     172.17.0.1:37102 - "GET /sitemap.xml HTTP/1.1" 307 Temporary Redirect
+INFO:     172.17.0.1:37102 - "GET /static/sitemap.xml HTTP/1.1" 200 OK
+INFO:     172.17.0.1:37116 - "GET /robots.txt HTTP/1.1" 307 Temporary Redirect
+INFO:     172.17.0.1:37116 - "GET /static/robots.txt HTTP/1.1" 200 OK
+INFO:     172.17.0.1:37240 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:37318 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:37318 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:37320 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+Almond Frost
+Kelp
+Swiss Coffee
+Siam
+Kelp
+Rangitoto
+INFO:     172.17.0.1:37442 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:37592 - "GET /recommendstyle/DDD6D5 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39448 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39448 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39450 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39452 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39448 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39558 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39558 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:39702 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:39702 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39704 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40002 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40002 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40002 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40004 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+Rangoon Green
+Seashell
+Siam
+Woodrush
+시멘트색
+Kelp
+INFO:     172.17.0.1:40074 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40124 - "GET /recommendstyle/A1A2A4 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40446 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:40446 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40448 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40538 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40538 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40540 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40542 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40540 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40540 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40540 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+Woodrush
+Seashell
+Siam
+Rangoon Green
+Star Dust
+Kelp
+INFO:     172.17.0.1:40608 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40632 - "GET /recommendstyle/9F9F9C HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40946 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40946 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40946 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40948 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40946 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40946 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40948 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40962 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40948 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40948 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40948 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+Rangoon Green
+Seashell
+Siam
+Woodrush
+Star Dust
+Kelp
+INFO:     172.17.0.1:40948 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40980 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40980 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40980 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40980 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41010 - "GET /recommendstyle/F1F1F1 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41080 - "GET /robots.txt HTTP/1.1" 307 Temporary Redirect
+INFO:     172.17.0.1:41080 - "GET /static/robots.txt HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41080 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41080 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41080 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41080 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41080 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41082 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41082 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41082 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41196 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41196 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41198 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41200 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42052 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42052 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:42116 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42116 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:42266 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42266 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:42266 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42268 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42322 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42322 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42324 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42326 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42324 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42324 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42324 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42380 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42380 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:42502 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42502 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:42502 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42512 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+Kelp
+Seashell
+Rangoon Green
+Siam
+Woodrush
+시멘트색
+INFO:     172.17.0.1:42710 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42720 - "GET /recommendstyle/1C1E13 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42804 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42804 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:42824 - "GET / HTTP/1.1" 200 OK
+Swiss Coffee
+Kelp
+Kelp
+Almond Frost
+Siam
+Rangitoto
+INFO:     172.17.0.1:42910 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42934 - "GET /recommendstyle/DDD6D5 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43034 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43034 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+Seashell
+Kelp
+Woodrush
+Siam
+Star Dust
+Rangoon Green
+INFO:     172.17.0.1:43036 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43118 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43118 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43120 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43120 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:43120 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43268 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43546 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43546 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:43546 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43548 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+Seashell
+Rangoon Green
+Siam
+Woodrush
+시멘트색
+Kelp
+INFO:     172.17.0.1:44390 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44518 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44518 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:44548 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44548 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:44548 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44550 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44578 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44578 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44578 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44578 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44592 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44578 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44592 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44592 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44592 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45018 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45020 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45020 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45020 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45018 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45020 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45018 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45018 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45018 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45070 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45070 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45080 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45080 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45080 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45070 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45082 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45082 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45080 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45080 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45660 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45660 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45660 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45662 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45660 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45660 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45660 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45674 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45674 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45676 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45678 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45678 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45674 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45674 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:46010 - "GET /open/ HTTP/1.1" 404 Not Found
+INFO:     172.17.0.1:46010 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:47716 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:47716 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:47716 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:47728 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48440 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48440 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48440 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48836 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48836 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+Kelp
+Swiss Coffee
+Siam
+Almond Frost
+Rangitoto
+Kelp
+INFO:     172.17.0.1:48846 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48890 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48890 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48890 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48890 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48892 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48972 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48972 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48974 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+Siam
+Seashell
+Rangoon Green
+Kelp
+Woodrush
+시멘트색
+INFO:     172.17.0.1:48974 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49092 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49092 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49094 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49984 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49984 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49986 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+흰색
+Oslo Gray
+Shark
+French Gray
+쥐색
+Gallery
+INFO:     172.17.0.1:49984 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:50850 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:50850 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:50860 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51488 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51488 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51516 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+Seashell
+Rangoon Green
+Siam
+Woodrush
+Kelp
+Star Dust
+INFO:     172.17.0.1:51488 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52060 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52060 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52062 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52060 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52062 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52062 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52062 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+Kelp
+Seashell
+Woodrush
+Siam
+시멘트색
+Rangoon Green
+INFO:     172.17.0.1:52362 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52362 - "GET /recommendstyle/A1A2A4 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52362 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+Rangoon Green
+Seashell
+Siam
+Woodrush
+Kelp
+Star Dust
+INFO:     172.17.0.1:52748 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52744 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52744 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52744 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53086 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:54540 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:54540 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:54542 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+Siam
+Seashell
+Woodrush
+Kelp
+Rangoon Green
+Star Dust
+INFO:     172.17.0.1:54540 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55220 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55220 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55256 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:37224 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:37224 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:37224 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:37226 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:37226 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:37224 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:37224 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+Woodrush
+Seashell
+Siam
+Star Dust
+Kelp
+Rangoon Green
+INFO:     172.17.0.1:37504 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:37940 - "GET /recommendstyle/9F9F9C HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39280 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39280 - "GET /static/css/bootstrap.min.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:39280 - "GET /static/home.css HTTP/1.1" 200 OK
+Chicago
+Silver Chalice
+회색
+Alabaster
+Fuscous Gray
+Dove Gray
+INFO:     172.17.0.1:40048 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40890 - "GET /recommendstyle/FAFAFA HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42380 - "GET /sitemap.xml HTTP/1.1" 307 Temporary Redirect
+INFO:     172.17.0.1:42380 - "GET /static/sitemap.xml HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42980 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42980 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:42980 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42982 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43610 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43730 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43730 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43730 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43730 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43730 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43746 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43746 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43748 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43746 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43746 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+Romance
+초콜릿색
+Cod Gray
+Sisal
+Hemp
+Wax Flower
+INFO:     172.17.0.1:43772 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43782 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43782 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43772 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43782 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43772 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43772 - "GET /recommendstyle/5B4749 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43820 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43820 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43822 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43824 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43824 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43824 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43822 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43822 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+Desert Storm
+Charade
+Tuna
+Eunry
+Abbey
+Cinder
+INFO:     172.17.0.1:43888 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43890 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43890 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43890 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43890 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43890 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44126 - "GET /recommendstyle/292937 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44146 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44146 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44148 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44146 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44146 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+흰색
+Aquamarine Blue
+Outer Space
+Bone
+Sirocco
+Woodsmoke
+INFO:     172.17.0.1:44258 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44342 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44342 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:44366 - "GET /recommendstyle/71D9E2 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44366 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44390 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44472 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44472 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44476 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44476 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44472 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44472 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44472 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44472 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44472 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+흰색
+Aquamarine Blue
+Woodsmoke
+Sirocco
+Outer Space
+Bone
+INFO:     172.17.0.1:44472 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44524 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+Cod Gray
+Cod Gray
+Cod Gray
+Cod Gray
+Cod Gray
+Cod Gray
+INFO:     172.17.0.1:44570 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44768 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44768 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44770 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44770 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44768 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+흰색
+Cod Gray
+회색
+Gallery
+목탄색
+Silver
+INFO:     172.17.0.1:44800 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44872 - "GET / HTTP/1.1" 200 OK
+흰색
+Storm Dust
+Mountain Mist
+Silver
+Mine Shaft
+은회색
+INFO:     172.17.0.1:44942 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44994 - "GET /recommendstyle/DDDEE0 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44994 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45040 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45040 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45040 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45040 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45040 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45058 - "POST /averagecolors HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.7/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/site-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.7/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.7/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.7/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.7/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.7/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.7/site-packages/fastapi/routing.py", line 227, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.7/site-packages/fastapi/routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "./main.py", line 135, in averagecolor
+    colors = extractAvgColor.extractAvgColor(img)
+  File "./extractAvgColor.py", line 79, in extractAvgColor
+    threedimensionimage, dsize=(640, 480), interpolation=cv2.INTER_AREA
+cv2.error: OpenCV(4.5.4-dev) /tmp/pip-req-build-v2fnlv3a/opencv/modules/imgproc/src/resize.cpp:4051: error: (-215:Assertion failed) !ssize.empty() in function 'resize'
+
+INFO:     172.17.0.1:45072 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45128 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45128 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45130 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45128 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45128 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+Pampas
+Abbey
+Potters Clay
+Sandrift
+Taupe
+Akaroa
+INFO:     172.17.0.1:45128 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45268 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45268 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45270 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45272 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45272 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45282 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45306 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45738 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45738 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45740 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45742 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45740 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:46334 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:46334 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:46346 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:46346 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:46348 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:46350 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:46350 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:46360 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:46562 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:46562 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:46564 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:46564 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:46564 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:47044 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:47044 - "GET /robots.txt HTTP/1.1" 307 Temporary Redirect
+INFO:     172.17.0.1:47044 - "GET /static/robots.txt HTTP/1.1" 200 OK
+INFO:     172.17.0.1:47044 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:47046 - "GET /robots.txt HTTP/1.1" 307 Temporary Redirect
+INFO:     172.17.0.1:47046 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:47046 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:47046 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:47046 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+Bismark
+Hippie Blue
+Monsoon
+Abbey
+Plantation
+Shady Lady
+INFO:     172.17.0.1:47064 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:47142 - "GET /recommendstyle/27504B HTTP/1.1" 200 OK
+INFO:     172.17.0.1:47290 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:47290 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:47292 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:47294 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:47294 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:47320 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:47732 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:47732 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:47734 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:47732 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:47732 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:47746 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48008 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48008 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48010 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48010 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48010 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48732 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48732 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48734 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48732 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48732 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48732 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48732 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49018 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49018 - "GET /robots.txt HTTP/1.1" 307 Temporary Redirect
+INFO:     172.17.0.1:49018 - "GET /static/robots.txt HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49018 - "GET /robots.txt HTTP/1.1" 307 Temporary Redirect
+INFO:     172.17.0.1:49018 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49020 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49018 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49018 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49018 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49088 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49134 - "GET / HTTP/1.1" 200 OK
+흰색
+Zeus
+Star Dust
+Dune
+Alto
+Dove Gray
+INFO:     172.17.0.1:49156 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:50322 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:50322 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:50322 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:50322 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:50322 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53268 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53268 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53268 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53268 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53268 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55886 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55888 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55886 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55890 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55890 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55920 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:59222 - "GET /open HTTP/1.1" 404 Not Found
+INFO:     172.17.0.1:59222 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:59222 - "GET /static/css/bootstrap.min.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:59222 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+Seashell
+Kelp
+Rangoon Green
+Star Dust
+Woodrush
+Siam
+INFO:     172.17.0.1:59284 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:59310 - "GET /recommendstyle/646A54 HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.7/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/site-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.7/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.7/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.7/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.7/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.7/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.7/site-packages/fastapi/routing.py", line 227, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.7/site-packages/fastapi/routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "./main.py", line 107, in read_user_item
+    color = coll.find_one({'RGB': colorcode})
+  File "/usr/local/lib/python3.7/site-packages/pymongo/collection.py", line 1328, in find_one
+    for result in cursor.limit(-1):
+  File "/usr/local/lib/python3.7/site-packages/pymongo/cursor.py", line 1238, in next
+    if len(self.__data) or self._refresh():
+  File "/usr/local/lib/python3.7/site-packages/pymongo/cursor.py", line 1130, in _refresh
+    self.__session = self.__collection.database.client._ensure_session()
+  File "/usr/local/lib/python3.7/site-packages/pymongo/mongo_client.py", line 1935, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "/usr/local/lib/python3.7/site-packages/pymongo/mongo_client.py", line 1883, in __start_session
+    server_session = self._get_server_session()
+  File "/usr/local/lib/python3.7/site-packages/pymongo/mongo_client.py", line 1921, in _get_server_session
+    return self._topology.get_server_session()
+  File "/usr/local/lib/python3.7/site-packages/pymongo/topology.py", line 520, in get_server_session
+    session_timeout = self._check_session_support()
+  File "/usr/local/lib/python3.7/site-packages/pymongo/topology.py", line 502, in _check_session_support
+    None)
+  File "/usr/local/lib/python3.7/site-packages/pymongo/topology.py", line 220, in _select_servers_loop
+    (self._error_message(selector), timeout, self.description))
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 111] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 6187cd8295fb6344dcbafb16, topology_type: Single, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 111] Connection refused')>]>
+INFO:     172.17.0.1:59726 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:59726 - "GET /static/favicon.ico HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:59846 - "GET / HTTP/1.1" 200 OK
+Seashell
+Rangoon Green
+Star Dust
+Siam
+Woodrush
+Kelp
+INFO:     172.17.0.1:59846 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:59878 - "GET /recommendstyle/454936 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:59920 - "GET / HTTP/1.1" 200 OK
+Rangitoto
+Swiss Coffee
+Kelp
+Siam
+Almond Frost
+Kelp
+INFO:     172.17.0.1:59922 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:59932 - "GET /recommendstyle/646A54 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:33030 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:33030 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:33032 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:33034 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+카키색
+Rodeo Dust
+Indian Khaki
+Zeus
+Vanilla
+Sandrift
+INFO:     172.17.0.1:33054 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:33076 - "GET /recommendstyle/D1BEA8 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:37192 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:37192 - "GET /static/css/bootstrap.min.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:53450 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53450 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53450 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53452 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53450 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:58278 - "GET /sitemap.xml HTTP/1.1" 307 Temporary Redirect
+INFO:     172.17.0.1:58278 - "GET /static/sitemap.xml HTTP/1.1" 200 OK
+INFO:     172.17.0.1:33342 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:33342 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:33352 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:33342 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:33342 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:47566 - "GET / HTTP/1.1" 200 OK
+INFO:     Will watch for changes in these directories: ['/workspace/newOFMC']
+INFO:     Uvicorn running on http://0.0.0.0:433 (Press CTRL+C to quit)
+INFO:     Started reloader process [358] using watchgod
+INFO:     Started server process [363]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     172.17.0.1:39912 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39916 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:39912 - "GET /static/css/bootstrap.min.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:39912 - "GET /static/favicon.ico HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:40162 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43612 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43612 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43616 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43618 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43618 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+WARNING:  WatchGodReload detected file change in '['/workspace/newOFMC/mongo.py']'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [363]
+INFO:     Started server process [1118]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchGodReload detected file change in '['/workspace/newOFMC/mongo.py']'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1118]
+INFO:     Started server process [1206]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     172.17.0.1:53540 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53540 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53554 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53550 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53550 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53550 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53550 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53554 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53554 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53554 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+흰색
+Dune
+Bali Hai
+Chicago
+Prairie Sand
+Clam Shell
+INFO:     172.17.0.1:53554 - "POST /averagecolors HTTP/1.1" 200 OK
+Rangoon Green
+Alto
+흰색
+Silver
+Hemp
+Fuscous Gray
+INFO:     172.17.0.1:54040 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:56046 - "GET / HTTP/1.1" 200 OK
+Ferra
+Swiss Coffee
+Matterhorn
+Eunry
+Trendy Pink
+Beauty Bush
+INFO:     172.17.0.1:56684 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:58378 - "GET / HTTP/1.1" 200 OK
+Prairie Sand
+흰색
+Dune
+Bali Hai
+Chicago
+Clam Shell
+INFO:     172.17.0.1:58378 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:33316 - "GET / HTTP/1.1" 200 OK
+흰색
+Millbrook
+Crocodile
+Silver Sand
+Eclipse
+Di Serria
+INFO:     172.17.0.1:33450 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39164 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39164 - "GET /static/js/bootstrap.min.js HTTP/1.1" 304 Not Modified
+Siam
+Seashell
+Rangoon Green
+Woodrush
+Kelp
+Star Dust
+INFO:     172.17.0.1:39164 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39164 - "GET /recommendstyle/F1F1F1 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40816 - "GET / HTTP/1.1" 200 OK
+WARNING:  WatchGodReload detected file change in '['/workspace/newOFMC/main.py']'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1206]
+WARNING:  WatchGodReload detected file change in '['/workspace/newOFMC/extractStyleColor.py']'. Reloading...
+INFO:     Started server process [2900]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchGodReload detected file change in '['/workspace/newOFMC/mongo.py']'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2900]
+INFO:     Started server process [2920]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     172.17.0.1:48744 - "GET / HTTP/1.1" 200 OK
+Seashell
+Rangoon Green
+Star Dust
+Kelp
+Woodrush
+Siam
+INFO:     172.17.0.1:48744 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48744 - "GET /recommendstyle/F1F1F1 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52476 - "GET / HTTP/1.1" 200 OK
+Seashell
+Rangoon Green
+Siam
+Woodrush
+Kelp
+Star Dust
+INFO:     172.17.0.1:52476 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52476 - "GET /recommendstyle/646A54 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:57232 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:57232 - "GET /static/css/bootstrap.min.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:57244 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+흰색
+Woodsmoke
+Dodger Blue
+Mine Shaft
+Silver Sand
+Sand Dune
+INFO:     172.17.0.1:57244 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:57554 - "GET /recommendstyle/1E90FF HTTP/1.1" 200 OK
+INFO:     172.17.0.1:38996 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:38996 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+Kelp
+Swiss Coffee
+Siam
+Almond Frost
+Rangitoto
+Kelp
+INFO:     172.17.0.1:38996 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39412 - "GET /recommendstyle/646A54 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43514 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:46326 - "GET / HTTP/1.1" 200 OK
+Siam
+Seashell
+Rangoon Green
+Woodrush
+Kelp
+Star Dust
+INFO:     172.17.0.1:46326 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:46326 - "GET /recommendstyle/9F9F9C HTTP/1.1" 200 OK
+INFO:     172.17.0.1:46326 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:46326 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:46650 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:46652 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:46326 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+Seashell
+Woodrush
+Kelp
+Rangoon Green
+시멘트색
+Siam
+INFO:     172.17.0.1:46326 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:46966 - "GET /recommendstyle/A1A2A4 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51616 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:34790 - "GET / HTTP/1.1" 200 OK
+Swiss Coffee
+Kelp
+Siam
+Kelp
+Almond Frost
+Rangitoto
+INFO:     172.17.0.1:34812 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:34812 - "GET /recommendstyle/454936 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42830 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42830 - "GET /ads.txt HTTP/1.1" 404 Not Found
+Rangoon Green
+Seashell
+Siam
+Woodrush
+Star Dust
+Kelp
+INFO:     172.17.0.1:42830 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42830 - "GET /recommendstyle/9F9F9C HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48842 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48842 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+흰색
+Woodsmoke
+Mine Shaft
+Dodger Blue
+Silver Sand
+Sand Dune
+INFO:     172.17.0.1:48842 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48842 - "GET /recommendstyle/FFFFFF HTTP/1.1" 200 OK
+INFO:     172.17.0.1:35464 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:35464 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:35464 - "GET /static/css/bootstrap.min.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:35470 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:35470 - "GET /static/favicon.ico HTTP/1.1" 304 Not Modified
+Siam
+Swiss Coffee
+Kelp
+Almond Frost
+Kelp
+Rangitoto
+INFO:     172.17.0.1:35470 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:35838 - "GET /recommendstyle/454936 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:36070 - "GET / HTTP/1.1" 200 OK
+Siam
+Swiss Coffee
+Kelp
+Almond Frost
+Rangitoto
+Kelp
+INFO:     172.17.0.1:36240 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:36526 - "GET /recommendstyle/646A54 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:57896 - "GET / HTTP/1.1" 200 OK
+쑥색
+Palm Green
+Cabbage Pont
+Hunter Green
+국방색
+Log Cabin
+INFO:     172.17.0.1:58026 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:58292 - "GET /recommendstyle/587650 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:35658 - "GET / HTTP/1.1" 200 OK
+Rangoon Green
+Seashell
+Siam
+Woodrush
+Star Dust
+Kelp
+INFO:     172.17.0.1:35658 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:35658 - "GET /recommendstyle/1C1E13 HTTP/1.1" 200 OK
+WARNING:  WatchGodReload detected file change in '['/workspace/newOFMC/mongo.py']'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2920]
+INFO:     Started server process [10272]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     172.17.0.1:54294 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:58468 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:58468 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:58472 - "GET /static/css/bootstrap.min.css HTTP/1.1" 304 Not Modified
+Rangoon Green
+Seashell
+Siam
+Woodrush
+Kelp
+Star Dust
+INFO:     172.17.0.1:58594 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:58942 - "GET /recommendstyle/646A54 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51424 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51424 - "GET /static/favicon.ico HTTP/1.1" 304 Not Modified
+Kelp
+Swiss Coffee
+Siam
+Rangitoto
+Almond Frost
+Kelp
+INFO:     172.17.0.1:51424 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51424 - "GET /recommendstyle/646A54 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:57828 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52104 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52104 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+Kelp
+Seashell
+Woodrush
+Siam
+Rangoon Green
+Star Dust
+INFO:     172.17.0.1:52104 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52104 - "GET /recommendstyle/646A54 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49308 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49308 - "GET /static/css/bootstrap.min.css HTTP/1.1" 304 Not Modified
+Seashell
+Kelp
+Woodrush
+Siam
+Rangoon Green
+시멘트색
+INFO:     172.17.0.1:49452 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49764 - "GET /recommendstyle/A1A2A4 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:36526 - "GET / HTTP/1.1" 200 OK
+Kelp
+Swiss Coffee
+Almond Frost
+Kelp
+Rangitoto
+Siam
+INFO:     172.17.0.1:41128 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39504 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39504 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39510 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39512 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39512 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:36396 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:36396 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:36396 - "GET /static/favicon.ico HTTP/1.1" 304 Not Modified
+Star Dust
+Seashell
+Rangoon Green
+Siam
+Kelp
+Woodrush
+INFO:     172.17.0.1:36558 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:36864 - "GET /recommendstyle/302A0F HTTP/1.1" 200 OK
+INFO:     172.17.0.1:36382 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:36382 - "GET /static/css/bootstrap.min.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:36382 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:36382 - "GET /static/js/bootstrap.min.js HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:40150 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:37852 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:37852 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:37862 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:37860 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:37862 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+Shingle Fawn
+Sandrift
+Iroko
+Bison Hide
+Donkey Brown
+청동색
+INFO:     172.17.0.1:38138 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:38608 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:38608 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:38612 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:38614 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:38614 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+Donkey Brown
+Iroko
+청동색
+Bison Hide
+Shingle Fawn
+Donkey Brown
+INFO:     172.17.0.1:38614 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40740 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40740 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40746 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40748 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40748 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+Copper Rose
+Clam Shell
+Hint of Red
+Oriental Pink
+Woody Brown
+Melanie
+INFO:     172.17.0.1:41202 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41576 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41576 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41582 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41584 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41584 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+Grain Brown
+Mine Shaft
+Sandstone
+Armadillo
+Zorba
+라벤더색
+INFO:     172.17.0.1:41740 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41864 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41990 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41990 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41994 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41996 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41990 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+Donkey Brown
+Iroko
+Malta
+Yellow Metal
+Brown Tumbleweed
+Domino
+INFO:     172.17.0.1:42198 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42318 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42318 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42386 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42388 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42388 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+Sandrift
+청동색
+Shingle Fawn
+Donkey Brown
+Bison Hide
+Iroko
+INFO:     172.17.0.1:42516 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49050 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49050 - "GET /static/css/bootstrap.min.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:49050 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+Woodsmoke
+흰색
+Silver Sand
+Mine Shaft
+Dodger Blue
+Sand Dune
+INFO:     172.17.0.1:49194 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49194 - "GET /recommendstyle/FFFFFF HTTP/1.1" 200 OK
+INFO:     172.17.0.1:54734 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:54734 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:54738 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:54740 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:54740 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43926 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43926 - "GET /static/css/bootstrap.min.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:43926 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:43926 - "GET /static/js/bootstrap.min.js HTTP/1.1" 304 Not Modified
+Kelp
+Swiss Coffee
+Siam
+Rangitoto
+Kelp
+Almond Frost
+INFO:     172.17.0.1:43962 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44076 - "GET /recommendstyle/DDD6D5 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44390 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44390 - "GET /static/favicon.ico HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:44390 - "GET /ads.txt HTTP/1.1" 404 Not Found
+Sea Green
+Aqua Forest
+Sea Green
+Sea Green
+De York
+Chateau Green
+INFO:     172.17.0.1:44438 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44438 - "GET /recommendstyle/40A860 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44438 - "GET / HTTP/1.1" 200 OK
+Charade
+Romance
+가죽색
+Scarpa Flow
+Just Right
+Cod Gray
+INFO:     172.17.0.1:44570 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44654 - "GET /recommendstyle/ECCDB9 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44748 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44748 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44748 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44750 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:38848 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:38848 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:38854 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:38856 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:38848 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:33404 - "GET / HTTP/1.1" 200 OK
+Swiss Coffee
+Kelp
+Siam
+Almond Frost
+Rangitoto
+Kelp
+INFO:     172.17.0.1:33460 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:33460 - "GET /recommendstyle/2E3222 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41802 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44916 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44918 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48348 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48350 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52890 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52892 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53838 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53838 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53838 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53840 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53838 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53838 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53840 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53848 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53848 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53848 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53848 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53946 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53946 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:53946 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53946 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:54056 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:54056 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:54056 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:54056 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:54784 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:54784 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:54784 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:54784 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:54944 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:54944 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:54946 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55126 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55126 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55126 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55126 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55432 - "GET /static/active.png HTTP/1.1" 404 Not Found
+INFO:     172.17.0.1:55432 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55432 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55486 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:55486 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55486 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55804 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55804 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55806 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55808 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55804 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55852 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:55852 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55854 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:56310 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:56310 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:56378 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:56378 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:56436 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:56436 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:56482 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:56630 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:56630 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:56630 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:56630 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:57040 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:57040 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:57040 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:57054 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:57576 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:57576 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:57722 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:57724 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:57984 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     172.17.0.1:58278 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:58278 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:58508 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:58508 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:58508 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:58514 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:58572 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:58572 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:58572 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:58582 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:58572 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:58572 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:58620 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:58620 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:58776 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:58776 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:58778 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:58836 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:58836 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:58838 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:58888 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:58888 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:58888 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:58888 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:59510 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:59510 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:59524 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:59524 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:59524 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:59570 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:59570 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:59570 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:59574 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:59574 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:59574 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:59574 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:59574 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:59574 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:59574 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:59574 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:59574 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:59766 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:59766 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:59766 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:59768 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:38354 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:38354 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:38450 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:38802 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:38846 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:38848 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:38994 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:38994 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39000 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39066 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39066 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39068 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39070 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39070 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39070 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39070 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39174 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39174 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39174 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39392 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39392 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39392 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39392 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39414 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39392 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39492 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39492 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39492 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39492 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39492 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39584 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39584 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39586 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39588 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39586 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39650 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:39650 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39654 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39858 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39860 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40114 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40114 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40116 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40118 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40118 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40242 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:40242 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40258 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+Seashell
+Kelp
+Woodrush
+Siam
+Star Dust
+Rangoon Green
+INFO:     172.17.0.1:40300 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40402 - "GET /recommendstyle/646A54 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40518 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40522 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42532 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42532 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42532 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42534 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42532 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42532 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42532 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+Kelp
+Swiss Coffee
+Almond Frost
+Kelp
+Rangitoto
+Siam
+INFO:     172.17.0.1:42576 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42576 - "GET /recommendstyle/DDD6D5 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42998 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42998 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+Swiss Coffee
+Kelp
+Siam
+Almond Frost
+Kelp
+Rangitoto
+INFO:     172.17.0.1:43028 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43156 - "GET /recommendstyle/646A54 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43572 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43572 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43576 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43578 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43578 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+Kelp
+Seashell
+Woodrush
+Siam
+Rangoon Green
+Star Dust
+INFO:     172.17.0.1:43644 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43708 - "GET /recommendstyle/646A54 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45602 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45604 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45602 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45602 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:46526 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:46526 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:46526 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:46530 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:46526 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:46526 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:46526 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+Seashell
+Kelp
+Woodrush
+Siam
+Rangoon Green
+Star Dust
+INFO:     172.17.0.1:46526 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:46526 - "GET /recommendstyle/F1F1F1 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:46904 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:46904 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:46904 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:46906 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:46906 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:46906 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:46906 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+Seashell
+Kelp
+Woodrush
+Rangoon Green
+Star Dust
+Siam
+INFO:     172.17.0.1:46958 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:47030 - "GET /recommendstyle/9F9F9C HTTP/1.1" 200 OK
+INFO:     172.17.0.1:47110 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:47112 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:47350 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:47350 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:47352 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:47350 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:47352 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:47352 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:47352 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+Woodrush
+Seashell
+Siam
+Kelp
+Rangoon Green
+시멘트색
+INFO:     172.17.0.1:47352 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48038 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48038 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:48100 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48102 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+Seashell
+Rangoon Green
+Siam
+Woodrush
+Kelp
+Star Dust
+INFO:     172.17.0.1:48224 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48368 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48368 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48378 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48712 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48712 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48714 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48714 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48714 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48714 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48714 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+Kelp
+Swiss Coffee
+Siam
+Kelp
+Almond Frost
+Rangitoto
+INFO:     172.17.0.1:48820 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49024 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49024 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49026 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49028 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49026 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49028 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49026 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+Kelp
+Swiss Coffee
+Siam
+Kelp
+Rangitoto
+Almond Frost
+INFO:     172.17.0.1:49026 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49160 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49160 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49168 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49166 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49168 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49166 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49168 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+Swiss Coffee
+Kelp
+Siam
+Almond Frost
+Rangitoto
+Kelp
+INFO:     172.17.0.1:49204 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49298 - "GET /recommendstyle/DDD6D5 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49520 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49520 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49520 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49522 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49520 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49520 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49520 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+Swiss Coffee
+Kelp
+Siam
+Kelp
+Almond Frost
+Rangitoto
+INFO:     172.17.0.1:49564 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49688 - "GET /recommendstyle/DDD6D5 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:50902 - "GET /robots.txt HTTP/1.1" 307 Temporary Redirect
+INFO:     172.17.0.1:50902 - "GET /static/robots.txt HTTP/1.1" 200 OK
+INFO:     172.17.0.1:50902 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51450 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51450 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51450 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51450 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53270 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53270 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:53270 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53270 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53270 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53272 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53272 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53622 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53622 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53272 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53272 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53272 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+Seashell
+Rangoon Green
+Siam
+Woodrush
+Star Dust
+Kelp
+INFO:     172.17.0.1:53646 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53752 - "GET /recommendstyle/F1F1F1 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53850 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53850 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+Seashell
+Kelp
+Rangoon Green
+Woodrush
+Siam
+시멘트색
+INFO:     172.17.0.1:53850 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53850 - "GET /recommendstyle/454936 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:54054 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:54054 - "GET /static/css/bootstrap.min.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:54054 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:54054 - "GET /static/js/bootstrap.min.js HTTP/1.1" 304 Not Modified
+카키색
+Rodeo Dust
+Zeus
+Indian Khaki
+Vanilla
+Sandrift
+INFO:     172.17.0.1:54128 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:54236 - "GET /recommendstyle/D1BEA8 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:54388 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:54388 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:54388 - "GET /static/favicon.ico HTTP/1.1" 304 Not Modified
+Indian Khaki
+Sandrift
+Rodeo Dust
+Zeus
+카키색
+Vanilla
+INFO:     172.17.0.1:54490 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:54490 - "GET /recommendstyle/C9B29B HTTP/1.1" 200 OK
+INFO:     172.17.0.1:35426 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:35426 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41034 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41034 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+Alto
+Rangitoto
+Arrowtown
+흰색
+Tide
+Armadillo
+INFO:     172.17.0.1:41072 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41200 - "GET /recommendstyle/948771 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:57478 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:57478 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+Woodrush
+Seashell
+Star Dust
+Kelp
+Rangoon Green
+Siam
+INFO:     172.17.0.1:57532 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:57532 - "GET /recommendstyle/9F9F9C HTTP/1.1" 200 OK
+INFO:     172.17.0.1:46066 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:46066 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:47010 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48228 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48230 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48230 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48230 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48228 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48500 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48500 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48502 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48794 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48794 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48796 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48872 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48872 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48872 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48874 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48874 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49028 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49028 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49030 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49032 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49032 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49078 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:50472 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:50472 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:50474 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:50472 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:50472 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:50712 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:50712 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:50774 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:50774 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:50776 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:50778 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:50776 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51562 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51562 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51562 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51562 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51580 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51580 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51562 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51622 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:51622 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51624 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51824 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51824 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:51824 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51826 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51982 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51982 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:52188 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52188 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:52244 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:52244 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52244 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52430 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52430 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:52952 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52952 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:53354 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53354 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:54258 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:54258 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:54656 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:54656 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:54660 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:54662 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:54662 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:54762 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:54762 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:54766 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55140 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55140 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55140 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:55140 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55672 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55672 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:58826 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:58826 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:58898 - "GET /hottub HTTP/1.1" 404 Not Found
+INFO:     172.17.0.1:58898 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     172.17.0.1:59982 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:59982 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:59982 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:60058 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:60058 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:60060 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:60100 - "GET /hottub HTTP/1.1" 404 Not Found
+INFO:     172.17.0.1:60100 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:60112 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:60230 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:60230 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:60258 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:60258 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:35186 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:35186 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:35764 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:35764 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+Seashell
+Rangoon Green
+Siam
+Woodrush
+Kelp
+시멘트색
+INFO:     172.17.0.1:35800 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:35800 - "GET /recommendstyle/454936 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:37902 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:37902 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:37904 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:37906 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:37906 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+Woodrush
+Seashell
+Kelp
+Star Dust
+Siam
+Rangoon Green
+INFO:     172.17.0.1:37906 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:37906 - "GET /recommendstyle/454936 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:38538 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:38538 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:38540 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:38542 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:38542 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+Kelp
+Seashell
+Woodrush
+Star Dust
+Rangoon Green
+Siam
+INFO:     172.17.0.1:38542 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:38634 - "GET /recommendstyle/646A54 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:38690 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:38690 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39132 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39132 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39132 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+Kelp
+Swiss Coffee
+Kelp
+Almond Frost
+Siam
+Rangitoto
+INFO:     172.17.0.1:39194 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39194 - "GET /recommendstyle/DDD6D5 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39604 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39604 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:39604 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39606 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+Seashell
+Kelp
+Woodrush
+Star Dust
+Siam
+Rangoon Green
+INFO:     172.17.0.1:39606 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39732 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39732 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39734 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39736 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39736 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39736 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39736 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+Kelp
+Swiss Coffee
+Siam
+Rangitoto
+Kelp
+Almond Frost
+INFO:     172.17.0.1:39736 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39736 - "GET /recommendstyle/646A54 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40664 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40664 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:40664 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40682 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+Siam
+Seashell
+Rangoon Green
+Kelp
+Woodrush
+시멘트색
+INFO:     172.17.0.1:40808 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40808 - "GET /recommendstyle/454936 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41648 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41648 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41650 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41652 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41652 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41650 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41652 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+Seashell
+Siam
+Rangoon Green
+Star Dust
+Woodrush
+Kelp
+INFO:     172.17.0.1:41764 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41764 - "GET /recommendstyle/646A54 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51622 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51622 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:51622 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51626 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51788 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51788 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51798 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51788 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:60114 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:60114 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:60114 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:60120 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+Siam
+Swiss Coffee
+Kelp
+Rangitoto
+Almond Frost
+Kelp
+INFO:     172.17.0.1:59164 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:59524 - "GET /recommendstyle/DDD6D5 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:47292 - "GET /static/css/bootstrap.min.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:47294 - "GET /static/home.css HTTP/1.1" 200 OK
+Indian Khaki
+Zeus
+카키색
+Vanilla
+Rodeo Dust
+Sandrift
+INFO:     172.17.0.1:47294 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:47294 - "GET /recommendstyle/D1BEA8 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42588 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42588 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42592 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42594 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42592 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+Swiss Coffee
+Kelp
+Siam
+Kelp
+Almond Frost
+Rangitoto
+INFO:     172.17.0.1:42862 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43258 - "GET /recommendstyle/646A54 HTTP/1.1" 200 OK
+Sea Green
+Aqua Forest
+Chateau Green
+Sea Green
+De York
+Sea Green
+INFO:     172.17.0.1:43776 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:47058 - "GET /recommendstyle/5FA777 HTTP/1.1" 200 OK
+Woodrush
+Seashell
+Siam
+Rangoon Green
+Kelp
+시멘트색
+INFO:     172.17.0.1:47278 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:50998 - "GET /recommendstyle/302A0F HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55590 - "GET / HTTP/1.1" 200 OK
+Silver
+Natural Gray
+세피아
+Delta
+Nobel
+Sandstone
+INFO:     172.17.0.1:56356 - "POST /averagecolors HTTP/1.1" 200 OK
+Quill Gray
+Delta
+Masala
+Gray Nickel
+Mercury
+Natural Gray
+INFO:     172.17.0.1:58576 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:59512 - "GET /recommendstyle/E5E5E5 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44000 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44000 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44004 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44000 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53340 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53340 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53626 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53626 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53770 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53770 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53626 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:58128 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:59702 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:33104 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:34052 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:34052 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:36746 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:36746 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:36780 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:38126 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48548 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52164 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:56656 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:60530 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:33426 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:34168 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:34168 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:34168 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:34168 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:34720 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:34720 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:35084 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:36652 - "GET / HTTP/1.1" 200 OK
+Kelp
+Seashell
+Rangoon Green
+Star Dust
+Siam
+Woodrush
+INFO:     172.17.0.1:38162 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:38162 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:38162 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:38162 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:38162 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:38922 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+Rangoon Green
+Seashell
+Siam
+Woodrush
+시멘트색
+Kelp
+INFO:     172.17.0.1:39132 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42024 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42024 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42030 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42030 - "GET /ads.txt HTTP/1.1" 404 Not Found
+Did not find CR at end of boundary (40)
+INFO:     172.17.0.1:42234 - "POST /averagecolors HTTP/1.1" 400 Bad Request
+INFO:     172.17.0.1:43972 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44006 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43972 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+Did not find CR at end of boundary (40)
+INFO:     172.17.0.1:44006 - "POST /averagecolors HTTP/1.1" 400 Bad Request
+INFO:     172.17.0.1:44006 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44006 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44202 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44846 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44846 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44868 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+Did not find CR at end of boundary (40)
+INFO:     172.17.0.1:44868 - "POST /averagecolors HTTP/1.1" 400 Bad Request
+INFO:     172.17.0.1:48632 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48632 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48650 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+Did not find CR at end of boundary (40)
+INFO:     172.17.0.1:48650 - "POST /averagecolors HTTP/1.1" 400 Bad Request
+INFO:     172.17.0.1:50852 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:50852 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:50876 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+Did not find CR at end of boundary (40)
+INFO:     172.17.0.1:50876 - "POST /averagecolors HTTP/1.1" 400 Bad Request
+INFO:     172.17.0.1:51336 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51336 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51348 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55314 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55314 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55318 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+Did not find CR at end of boundary (40)
+INFO:     172.17.0.1:55318 - "POST /averagecolors HTTP/1.1" 400 Bad Request
+INFO:     172.17.0.1:57334 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:57334 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:57340 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+Did not find CR at end of boundary (40)
+INFO:     172.17.0.1:57340 - "POST /averagecolors HTTP/1.1" 400 Bad Request
+INFO:     172.17.0.1:58302 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:58302 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:58304 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+Did not find CR at end of boundary (40)
+INFO:     172.17.0.1:58476 - "POST /averagecolors HTTP/1.1" 400 Bad Request
+INFO:     172.17.0.1:39738 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39738 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39750 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40124 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40124 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40156 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40124 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40124 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40156 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40296 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+Kelp
+Swiss Coffee
+Siam
+Almond Frost
+Rangitoto
+Kelp
+INFO:     172.17.0.1:40296 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:37416 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:37416 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:37422 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:37422 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:37422 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:46150 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:46150 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:46160 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:46432 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:46432 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:46446 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:47624 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:47624 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:47624 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:47840 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:47840 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:47840 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:47840 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:47840 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:47840 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48024 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48442 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48916 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48916 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48916 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48916 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48916 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48916 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48916 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49434 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49434 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49668 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49668 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:50414 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:50418 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51290 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51290 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51308 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51290 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51290 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51290 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51550 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51550 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52766 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52766 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52770 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52766 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52766 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52770 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52770 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52770 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53576 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53576 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53648 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:54116 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:54116 - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:54116 - "GET /static/home.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:54116 - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:54116 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:54166 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:54166 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:54166 - "GET /static/favicon.ico HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55402 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55402 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55402 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:56182 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:56182 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:56202 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:56934 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:56934 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:56958 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+Did not find CR at end of boundary (40)
+INFO:     172.17.0.1:56934 - "POST /averagecolors HTTP/1.1" 400 Bad Request
+INFO:     172.17.0.1:58104 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:58104 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:58118 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+Did not find CR at end of boundary (40)
+INFO:     172.17.0.1:58118 - "POST /averagecolors HTTP/1.1" 400 Bad Request
+INFO:     172.17.0.1:58964 - "GET / HTTP/1.1" 200 OK
+Did not find CR at end of boundary (40)
+INFO:     172.17.0.1:59682 - "POST /averagecolors HTTP/1.1" 400 Bad Request
+INFO:     172.17.0.1:60110 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:60928 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:33778 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:33778 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:33810 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:37852 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:37852 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:37866 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+Did not find CR at end of boundary (40)
+INFO:     172.17.0.1:38074 - "POST /averagecolors HTTP/1.1" 400 Bad Request
+INFO:     172.17.0.1:38074 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:38246 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:38250 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49006 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49006 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49016 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49276 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49276 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49288 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49990 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49990 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:50002 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:50548 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:50548 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:50558 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+Did not find CR at end of boundary (40)
+INFO:     172.17.0.1:50548 - "POST /averagecolors HTTP/1.1" 400 Bad Request
+INFO:     172.17.0.1:51284 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51284 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51292 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+Did not find CR at end of boundary (40)
+INFO:     172.17.0.1:51284 - "POST /averagecolors HTTP/1.1" 400 Bad Request
+INFO:     172.17.0.1:55362 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55362 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55378 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+Did not find CR at end of boundary (40)
+INFO:     172.17.0.1:55362 - "POST /averagecolors HTTP/1.1" 400 Bad Request
+INFO:     172.17.0.1:56530 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:56530 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:56538 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+Did not find CR at end of boundary (40)
+INFO:     172.17.0.1:56530 - "POST /averagecolors HTTP/1.1" 400 Bad Request
+INFO:     172.17.0.1:57700 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:57700 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:57716 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+Did not find CR at end of boundary (40)
+INFO:     172.17.0.1:57700 - "POST /averagecolors HTTP/1.1" 400 Bad Request
+INFO:     172.17.0.1:59722 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:59722 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:59736 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+Did not find CR at end of boundary (40)
+INFO:     172.17.0.1:59736 - "POST /averagecolors HTTP/1.1" 400 Bad Request
+INFO:     172.17.0.1:32960 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:32960 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:32960 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+Did not find CR at end of boundary (40)
+INFO:     172.17.0.1:32960 - "POST /averagecolors HTTP/1.1" 400 Bad Request
+INFO:     172.17.0.1:36936 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:36936 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:36950 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+Did not find CR at end of boundary (40)
+INFO:     172.17.0.1:36950 - "POST /averagecolors HTTP/1.1" 400 Bad Request
+INFO:     172.17.0.1:38672 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:38672 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:38680 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+Seashell
+Rangoon Green
+Siam
+Woodrush
+Kelp
+시멘트색
+INFO:     172.17.0.1:38680 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40046 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40046 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:40062 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+Did not find CR at end of boundary (40)
+INFO:     172.17.0.1:40062 - "POST /averagecolors HTTP/1.1" 400 Bad Request
+INFO:     172.17.0.1:42602 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42602 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42608 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+Did not find CR at end of boundary (40)
+INFO:     172.17.0.1:42706 - "POST /averagecolors HTTP/1.1" 400 Bad Request
+INFO:     172.17.0.1:43210 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43210 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43224 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+Did not find CR at end of boundary (40)
+INFO:     172.17.0.1:43224 - "POST /averagecolors HTTP/1.1" 400 Bad Request
+INFO:     172.17.0.1:43804 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43804 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:43804 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+Did not find CR at end of boundary (40)
+INFO:     172.17.0.1:43804 - "POST /averagecolors HTTP/1.1" 400 Bad Request
+INFO:     172.17.0.1:44862 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44862 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44880 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+Did not find CR at end of boundary (40)
+INFO:     172.17.0.1:44862 - "POST /averagecolors HTTP/1.1" 400 Bad Request
+INFO:     172.17.0.1:52952 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52952 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52962 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:57064 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:57064 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:57072 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:58388 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:58388 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:58398 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+Did not find CR at end of boundary (40)
+INFO:     172.17.0.1:58398 - "POST /averagecolors HTTP/1.1" 400 Bad Request
+INFO:     172.17.0.1:34886 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:34886 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:34900 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:35258 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:35258 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:35272 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:37198 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:37198 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:37206 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:37462 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:37462 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:37462 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:37696 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:37696 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:37704 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39472 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39472 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39478 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+Kelp
+Swiss Coffee
+Siam
+Almond Frost
+Rangitoto
+Kelp
+INFO:     172.17.0.1:39594 - "POST /averagecolors HTTP/1.1" 200 OK
+WARNING:  WatchGodReload detected file change in '['/workspace/newOFMC/extractAvgColor.py']'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [10272]
+INFO:     Started server process [39148]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     172.17.0.1:41404 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41404 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41448 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+Seashell
+Kelp
+Thatch Green
+Silver Chalice
+Siam
+Rangoon Green
+INFO:     172.17.0.1:41562 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41906 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41906 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41910 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42256 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42256 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:42256 - "GET /static/js/bootstrap.min.js HTTP/1.1" 304 Not Modified
+Vanilla
+카키색
+Indian Khaki
+Sandrift
+Zeus
+Rodeo Dust
+INFO:     172.17.0.1:42474 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42808 - "GET /recommendstyle/D1BEA8 HTTP/1.1" 200 OK
+흰색
+Flint
+Armadillo
+Zorba
+Cotton Seed
+Bon Jour
+INFO:     172.17.0.1:43018 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48568 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48568 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48574 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48848 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48848 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:48868 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49066 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49066 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49094 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49270 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49270 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49292 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49522 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49522 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49544 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:50164 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:50164 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:50178 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+Seashell
+Rangoon Green
+Siam
+Silver Chalice
+Kelp
+Thatch Green
+INFO:     172.17.0.1:50164 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51802 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51802 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51820 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+Rangoon Green
+Seashell
+Silver Chalice
+Siam
+Thatch Green
+Kelp
+INFO:     172.17.0.1:51940 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:46252 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:46252 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:46252 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+Seashell
+Rangoon Green
+Siam
+Thatch Green
+Silver Chalice
+Kelp
+INFO:     172.17.0.1:46430 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51444 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51444 - "GET /static/home.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:51444 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51472 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51874 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51874 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51894 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52200 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52200 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52200 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53058 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53058 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53078 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53442 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53442 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53462 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53870 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53870 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53870 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+Seashell
+Rangoon Green
+Siam
+Thatch Green
+Silver Chalice
+Kelp
+INFO:     172.17.0.1:54094 - "POST /averagecolors HTTP/1.1" 200 OK
+Arrowtown
+Rangitoto
+Alto
+Nomad
+Romance
+Armadillo
+INFO:     172.17.0.1:54370 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:54570 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:54570 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:54632 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55712 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55712 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:55712 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+카키색
+Bastille
+Iceberg
+커피색
+황토색
+Cognac
+INFO:     172.17.0.1:55284 - "POST /averagecolors HTTP/1.1" 200 OK
+Iceberg
+Bastille
+카키색
+Cognac
+커피색
+황토색
+INFO:     172.17.0.1:56280 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:57130 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:57130 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:57130 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+Nobel
+Rangitoto
+Siam
+Thatch Green
+Kelp
+Seashell
+INFO:     172.17.0.1:57324 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:57324 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:57324 - "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 OK
+INFO:     172.17.0.1:57434 - "GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 OK
+Fuscous Gray
+Swirl
+Dawn
+Cararra
+Armadillo
+Schooner
+INFO:     172.17.0.1:57578 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:58416 - "GET / HTTP/1.1" 200 OK
+Fuscous Gray
+Dawn
+Cararra
+Schooner
+Swirl
+Armadillo
+INFO:     172.17.0.1:36014 - "POST /averagecolors HTTP/1.1" 200 OK
+INFO:     172.17.0.1:36014 - "GET /recommendstyle/EEEEE8 HTTP/1.1" 200 OK

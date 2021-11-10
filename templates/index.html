@@ -66,13 +66,13 @@
                                 </button>
                             </h2>
                             <div id="collapse${style}" class="accordion-collapse collapse" aria-labelledby="heading${style}" data-bs-parent="#accordionExample">
-                                <div class="accordion-body text-center fs-6">
+                                <div class="accordion-body text-center">
                                     <strong>${
                                         resultrecomend.explanationstyle[style + 'explanation']
                                     }</strong><br>
                                 </div>
                                 <div>
-                                    <div class="d-block w-100" style="background-color:#${pickcolor}; height:20vw;">
+                                    <div class="d-block w-100" style="background-color:#${pickcolor}; height:20vw;"></div>
                                 </div>
                                 <div id="carousel${style}" class="carousel slide" data-bs-ride="carousel">
                                     <div class="carousel-inner">
@@ -92,10 +92,13 @@
                     `;
                 }
                 html += '</div>';
+                html +=
+                    "<div class='mt-1 text-center'><button type='button' id='analysis' class='btn btn-danger col fs-4 mx-auto' onclick ='resultcolorsretry();' id='liveToastBtn'>다시해보기</button></div>";
                 document.getElementById('analysiscolor').innerHTML = html;
                 document.getElementById('resultloding').style.display = 'none';
                 document.getElementById('analysiscolor').style.display = 'flex';
             }
+
             function appendresultcolor(resultcolors) {
                 let html = '';
                 for (var i in resultcolors) {
@@ -104,7 +107,7 @@
                         i +
                         "' value='" +
                         resultcolors[i].code +
-                        "'><label class='btn col-4 btn-outline-dark' for='option" +
+                        "'><label class='btn lh-1 col-4 btn-outline-dark' for='option" +
                         i +
                         "'style='background-color:#" +
                         resultcolors[i].code +
@@ -113,25 +116,79 @@
                         '</label>';
                 }
                 html +=
-                    "<div id='checkwrap' class='col-12 mx-0 p-0'><button type='button' id='analysis' class='btn btn-success h-100 col-6' onclick ='recommendAPI();'>Analysis R U N</button><button type='button' id='analysis' class='btn btn-danger h-100 col-6' onclick ='averagecolorsretry();' id='liveToastBtn'>Retry</button></div>";
+                    "<div id='checkwrap' class='col-12 mx-0 p-0'><button type='button' id='analysis' class='btn btn-success h-100 col-6' onclick ='recommendAPI();'>결과확인<br>하러가기</button><button type='button' id='analysis' class='btn btn-danger h-100 col-6' onclick ='averagecolorsretry();' id='liveToastBtn'>다시확인</button></div>";
                 document.getElementById('resultcolor').innerHTML = html;
                 document.getElementById('resultloding').style.display = 'none';
                 document.getElementById('resultcolor').style.display = 'flex';
             }
+
             function averagecolorsretry() {
                 document.getElementById('resultcolor').style.display = 'none';
                 document.getElementById('image-upload-wrap').style.display = 'block';
-                var toast = new bootstrap.Toast(liveToast);
+                var toast = new bootstrap.Toast(liveToast1);
                 toast.show();
             }
-            async function averagecolorsAPI(input) {
-                document.getElementById('image-upload-wrap').style.display = 'none';
-                document.getElementById('resultloding').innerHTML =
-                    "<div class='mosaic-loader p-0'><div class='cell d-0'></div><div class='cell d-1'></div><div class='cell d-2'></div><div class='cell d-3'></div><div class='cell d-1'></div><div class='cell d-2'></div><div class='cell d-3'></div><div class='cell d-4'></div><div class='cell d-2'></div><div class='cell d-3'></div><div class='cell d-4'></div><div class='cell d-5'></div><div class='cell d-3'></div><div class='cell d-4'></div><div class='cell d-5'></div><div class='cell d-6'></div></div>";
-                document.getElementById('resultloding').style.display = 'flex';
-                if (input.files && input.files[0]) {
-                    const formData = new FormData();
-                    formData.append('file', input.files[0], input.files[0].name);
+
+            function resultcolorsretry() {
+                document.getElementById('analysiscolor').style.display = 'none';
+                document.getElementById('image-upload-wrap').style.display = 'block';
+                var toast = new bootstrap.Toast(liveToast2);
+                toast.show();
+            }
+
+            function manualliveToast() {
+                var toast = new bootstrap.Toast(liveToast3);
+                toast.show();
+            }
+            
+            const load_image = e => {
+              const files = e.files;
+              const filesArr = Array.prototype.slice.call(files);
+              // 여러장의 이미지를 불러올 경우, 배열화
+
+              filesArr.forEach(file => {
+                const reader = new FileReader();
+                reader.onload = e => {
+                    const image = new Image();
+                    image.className = "img-item"; // 스타일 적용을 위해
+                    image.src = e.target.result;
+                    image.onload = imageEvent => {
+                      // 이미지가 로드가 되면! 리사이즈 함수가 실행되도록 합니다.
+                      resize_image(image);
+                  };
+                };
+                reader.readAsDataURL(file);
+              });
+            };
+
+            const resize_image = async image => {
+              let canvas = document.createElement("canvas"),
+                max_size = 200,
+                // 최대 기준을 1280으로 잡음.
+                width = image.width,
+                height = image.height;
+
+              if (width > height) {
+                // 가로가 길 경우
+                if (width > max_size) {
+                  height *= max_size / width;
+                  width = max_size;
+                }
+              } else {
+                // 세로가 길 경우
+                if (height > max_size) {
+                  width *= max_size / height;
+                  height = max_size;
+                }
+              }
+              canvas.width = width;
+              canvas.height = height;
+              canvas.getContext("2d").drawImage(image, 0, 0, width, height);
+              const dataUrl = canvas.toDataURL("image/jpeg");
+              const imageValue = dataURLToBlob(dataUrl);
+              var file = new File([imageValue], "name.jpg", {type:"image/jpeg"});
+                const formData = new FormData();
+                    formData.append('file', file, file.name);
                     await fetch('https://coloravg.run.goorm.io/averagecolors', {
                         method: 'POST',
                         body: formData,
@@ -151,14 +208,49 @@
                         .catch((error) => {
                             console.log(error);
                         });
+            };
+
+            const dataURLToBlob = (dataURL) => {
+                const BASE64_MARKER = ';base64,';
+                if (dataURL.indexOf(BASE64_MARKER) === -1) {
+                    const parts = dataURL.split(',');
+                    const contentType = parts[0].split(':')[1];
+                    const raw = parts[1];
+                    return new Blob([raw], {
+                        type: contentType,
+                    });
+                }
+                const parts = dataURL.split(BASE64_MARKER);
+                const contentType = parts[0].split(':')[1];
+                const raw = window.atob(parts[1]);
+                const rawLength = raw.length;
+                const uInt8Array = new Uint8Array(rawLength);
+                let i = 0;
+                while (i < rawLength) {
+                    uInt8Array[i] = raw.charCodeAt(i);
+                    i++;
+                }
+                return new Blob([uInt8Array], {
+                    type: contentType,
+                });
+            };
+            
+            async function averagecolorsAPI(input) {
+                document.getElementById('image-upload-wrap').style.display = 'none';
+                document.getElementById('resultloding').innerHTML =
+                    "<div class='mosaic-loader p-0'><div class='cell d-0'></div><div class='cell d-1'></div><div class='cell d-2'></div><div class='cell d-3'></div><div class='cell d-1'></div><div class='cell d-2'></div><div class='cell d-3'></div><div class='cell d-4'></div><div class='cell d-2'></div><div class='cell d-3'></div><div class='cell d-4'></div><div class='cell d-5'></div><div class='cell d-3'></div><div class='cell d-4'></div><div class='cell d-5'></div><div class='cell d-6'></div></div>";
+                document.getElementById('resultloding').style.display = 'flex';
+                if (input.files && input.files[0]) {
+                    var e = load_image(input);
                 }
             }
+            
             function recommendAPI() {
                 document.getElementById('resultcolor').style.display = 'none';
                 document.getElementById('resultloding').style.display = 'flex';
-                const pickcolor = document.querySelector('input[name="colors"]:checked').value;
+                const pickcolor = document.querySelector('input[name="colors"]:checked');
                 if (pickcolor) {
-                    fetch('https://coloravg.run.goorm.io/recommendstyle/' + pickcolor)
+                    fetch('https://coloravg.run.goorm.io/recommendstyle/' + pickcolor.value)
                         .then((response) => {
                             if (response.status === 404) {
                                 alert('오류발생');
@@ -170,17 +262,21 @@
                             }
                         })
                         .then((responseJson) => {
-                            appendrecommd(responseJson, pickcolor);
+                            appendrecommd(responseJson, pickcolor.value);
                         })
                         .catch((error) => {
                             console.log(error);
                         });
+                } else {
+                    alert('색상을 선택하지 않았습니다. 가장유사한 색상을 선택해주세요. ( ﾟДﾟ)ゞ');
+                    document.getElementById('resultcolor').style.display = 'flex';
+                    document.getElementById('resultloding').style.display = 'none';
                 }
             }
         </script>
         <!--API통신-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
-            <div class="container-fluid">
+        <nav id="navbartop" class="navbar navbar-expand-lg navbar-light bg-transparent px-5">
+            <div class="container-fluid px-1">
                 <a class="navbar-brand" href="#">옷깔맞춤</a>
                 <button
                     class="navbar-toggler"
@@ -199,21 +295,32 @@
                             <a class="nav-link active" aria-current="page" href="/">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://github.com/OhGyoungHwan/OFMC">Github</a>
+                            <a class="nav-link" href="https://github.com/OhGyoungHwan/OFMC"
+                                >Github</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a
+                                class="nav-link"
+                                type="button"
+                                id="manualliveToastBtn"
+                                onclick="manualliveToast();"
+                                >Manual</a
+                            >
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
         <!--네비게이션_바-->
-        <div id="image-upload-wrap" class="mt-3 container w-100">
+        <div id="image-upload-wrap" class="container w-100 px-5">
             <div class="row h-100 text-center position-relative justify-content-around">
                 <div class="w-100">
                     <div id="image-upload" class="h-100 position-relative">
                         <input
                             type="file"
                             accept="image/*"
-                            class="position-absolute opacity-0 w-100 h-100 top-0 start-0"
+                            class="position-absolute form-control opacity-0 w-100 h-100 top-0 start-0"
                             id="inputGroupFile01"
                             onchange="averagecolorsAPI(this);"
                         />
@@ -230,6 +337,9 @@
                                 class="m-auto"
                                 viewBox="0 0 16 16"
                                 id="input-svg"
+                                data-bs-toggle="tooltip"
+                                data-bs-placement="bottom"
+                                title="Tooltip on bottom"
                             >
                                 <path
                                     d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"
@@ -244,12 +354,45 @@
             </div>
         </div>
         <!--이미지_업로드-->
-        <div id="resultloding" class="row w-100 m-auto"></div>
+        <div id="resultloding" class="row w-100 m-auto px-5"></div>
         <!--로딩출력창-->
-        <div id="resultcolor" class="row w-100 m-auto"></div>
+        <div id="resultcolor" class="row w-100 m-auto px-5"></div>
         <!--색상결과출력창-->
+        <div class="position-fixed top-50 start-50 translate-middle p-3" style="z-index: 11;">
+            <div
+                id="liveToast3"
+                class="toast"
+                role="alert"
+                aria-live="assertive"
+                aria-atomic="true"
+                data-bs-delay="10000"
+            >
+                <div class="toast-header">
+                    <strong class="me-auto">먼저 사진을 올려봅시다.⸜(*ˊᗜˋ*)⸝</strong>
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="toast"
+                        aria-label="Close"
+                    ></button>
+                </div>
+                <div class="toast-body">
+                    PC : 드로그 앤 드롭 혹은 여기를 클릭해서 사진을 넣어주세요. 모바일: 여기를
+                    클릭해서 사진을 촬영하거나 이미 있는 사진을 넣어주세요. !약 10초정도의 시간이
+                    걸립니다!
+                </div>
+            </div>
+        </div>
+        <!--메뉴얼처리부분-->
         <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11;">
-            <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div
+                id="liveToast1"
+                class="toast"
+                role="alert"
+                aria-live="assertive"
+                aria-atomic="true"
+                data-bs-delay="10000"
+            >
                 <div class="toast-header">
                     <strong class="me-auto">확인해주세요!</strong>
                     <button
@@ -265,40 +408,45 @@
                 </div>
             </div>
         </div>
-        <script>
-            function openGallery(id) {
-                closeAll();
-                const gallery = document.getElementById('gallery-' + id);
-                const card = document.getElementById('card-' + id);
-                gallery.classList.add('Gallery--active');
-                card.classList.add('Card--active');
-            }
-
-            function closeAll() {
-                const galleryActv = document.querySelector('.Gallery--active');
-                const cardActv = document.querySelector('.Card--active');
-                if (galleryActv) {
-                    galleryActv.classList.remove('Gallery--active');
-                }
-                if (cardActv) {
-                    cardActv.classList.remove('Card--active');
-                }
-            }
-        </script>
-        <div id="analysiscolor" class="row w-100 m-auto"></div>
+        <!--다시하기처리부분-->
+        <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11;">
+            <div
+                id="liveToast2"
+                class="toast"
+                role="alert"
+                aria-live="assertive"
+                aria-atomic="true"
+                data-bs-delay="10000"
+            >
+                <div class="toast-header">
+                    <strong class="me-auto">추천은 어땠나요?</strong>
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="toast"
+                        aria-label="Close"
+                    ></button>
+                </div>
+                <div class="toast-body">
+                    좋은 의견이 있다면 댓글로 남겨주세요 매일 확인하고 있습니다. (˵ ͡~ ͜ʖ ͡°˵)ﾉ
+                </div>
+            </div>
+        </div>
+        <!--입력오류시처리부분-->
+        <div id="analysiscolor" class="row w-100 m-auto px-5"></div>
         <!--분석결과출력창-->
-        <div class="mt-3 container d-flex justify-content-center">
+        <div class="mt-3 w-100 container d-flex justify-content-center">
             <ins
                 class="kakao_ad_area"
                 style="display: none;"
-                data-ad-unit="DAN-wgbZJLFJH1wIbNUN"
+                data-ad-unit="DAN-CDQ5IEj2oyoM88FT"
                 data-ad-width="320"
                 data-ad-height="100"
             ></ins>
             <script src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
         </div>
         <!--광고-->
-        <div id="disqus_thread" class="mt-3">
+        <div id="disqus_thread" class="mt-3 px-5">
             <script>
                 /**
                  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
@@ -318,5 +466,38 @@
             </script>
         </div>
         <!--disqus댓글-->
+        <div id="particle-container" class="fixed-top h-100" style="z-index: -10;">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        <!--파티클이펙트-->
     </body>
 </html>

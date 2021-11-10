@@ -11,6 +11,10 @@ nav {
     font-family: 'BMJUA';
 }
 
+.navbar-brand {
+    font-size: 1.5rem;
+}
+
 .navbar-collapse {
     transition: 500ms;
 }
@@ -23,11 +27,12 @@ nav {
 }
 
 #image-upload-wrap {
+    z-index: 1;
     max-width: 100%;
 }
 
 #image-upload-wrap {
-    height: 45vw;
+    height: 40vw;
     animation: fadein 3s;
 }
 
@@ -47,12 +52,12 @@ nav {
 }
 
 #resultloding {
-    height:45vw;
+    height:40vw;
     display: none;
 }
 
 #resultcolor {
-    height:45vw;
+    height:40vw;
     display: none;
     animation: fadein 3s;
 }
@@ -63,6 +68,18 @@ nav {
 
 #analysis {
     font-size:5vw;
+}
+
+.accordion-collapse{
+    transition: 500ms;
+}
+
+.carousel-item{
+    transition: 500ms;
+}
+
+.accordion-body.text-center{
+    font-size: 0.7rem;
 }
 
 /* ---------------------로딩바 표현 부분----------------------- */
@@ -166,424 +183,6 @@ nav {
 	}
 }
 
-/* ---------------------갤러리 표현 부분----------------------- */
-.Grid {
-  width: 50rem;
-  margin: 5rem auto;
-}
-.Grid-row {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 2.5rem;
-}
-.Card {
-  position: relative;
-  flex: 0 1 15rem;
-  background-color: #fff;
-  padding-bottom: 5rem;
-  transition: background-color 0.2s cubic-bezier(0.5, 0.3, 0.8, 0.06);
-  color: #000;
-}
-.Card-thumb {
-  position: relative;
-  width: 15rem;
-  height: 10rem;
-  perspective-origin: 50% 0%;
-  perspective: 600px;
-  z-index: 1;
-}
-.Card-image,
-.Card-shadow {
-  position: absolute;
-  display: block;
-  width: 15rem;
-  height: 10rem;
-  transition: all 0.2s cubic-bezier(0.42, 0, 0.58, 1);
-}
-.Card-shadow {
-  opacity: 0.8;
-}
-.Card-shadow:nth-child(1) {
-  opacity: 0.6;
-  background-color: #673ab7;
-  transition: all 0.2s cubic-bezier(0.42, 0, 0.58, 1) 0.07s;
-}
-.Card-shadow:nth-child(2) {
-  opacity: 0.7;
-  background-color: #3f51b5;
-  transition: all 0.2s cubic-bezier(0.42, 0, 0.58, 1) 0.05s;
-}
-.Card-shadow:nth-child(3) {
-  background-color: #2196f3;
-  transition: all 0.2s cubic-bezier(0.42, 0, 0.58, 1) 0.03s;
-}
-.Card-image {
-  position: relative;
-  background-size: auto 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: #607d8b;
-}
-.Card-image::before {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: #3f51b5;
-  content: '';
-  opacity: 0;
-  transition: opacity 0.1s;
-}
-.Card-title,
-.Card-explore {
-  position: absolute;
-  bottom: 0;
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 5rem;
-  text-align: center;
-  transition: all 0.2s cubic-bezier(0.5, 0.3, 0.8, 0.06);
-}
-.Card-title span,
-.Card-explore span {
-  padding: 0.5rem;
-  flex: 1 1 auto;
-  text-align: center;
-}
-.Card-explore {
-  opacity: 0;
-  transform: translate(0, -1rem);
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #673ab7;
-}
-.Card-button {
-  position: absolute;
-  left: 50%;
-  top: 5rem;
-  padding: 0.5rem 1rem;
-  background-color: #fff;
-  border-radius: 2rem;
-  border: 2px solid #3f51b5;
-  color: #fff;
-  font-size: 0.75rem;
-  font-weight: 600;
-  transform: translate(-50%, 2rem);
-  cursor: pointer;
-  transition: all 0.2s;
-  opacity: 0;
-  outline: none;
-  z-index: 4;
-}
-.Card:hover,
-.Card--active {
-  background-color: #f5f5f5;
-  cursor: pointer;
-}
-.Card:hover .Card-thumb,
-.Card--active .Card-thumb {
-  z-index: 3;
-}
-.Card:hover .Card-title,
-.Card--active .Card-title {
-  opacity: 0;
-}
-.Card:hover .Card-explore,
-.Card--active .Card-explore {
-  opacity: 1;
-  transform: translate(0, 1rem);
-  transition: all 0.2s cubic-bezier(0.42, 0, 0.58, 1) 0.1s;
-}
-.Card:hover .Card-image,
-.Card--active .Card-image {
-  transform: scale(1.05) translate(0, -1rem) rotateX(25deg);
-}
-.Card:hover .Card-image::before,
-.Card--active .Card-image::before {
-  opacity: 0.4;
-}
-.Card:hover .Card-shadow:nth-child(3),
-.Card--active .Card-shadow:nth-child(3) {
-  transform: scale(1.02) translate(0, -0.3rem) rotateX(15deg);
-}
-.Card:hover .Card-shadow:nth-child(2),
-.Card--active .Card-shadow:nth-child(2) {
-  transform: scale(0.9) translate(0, 1rem) rotateX(15deg);
-}
-.Card:hover .Card-shadow:nth-child(1),
-.Card--active .Card-shadow:nth-child(1) {
-  transform: scale(0.82) translate(0, 2.4rem) rotateX(5deg);
-}
-.Card:hover .Card-button,
-.Card--active .Card-button {
-  opacity: 1;
-  color: #3f51b5;
-  transform: translate(-50%, 0);
-}
-.Card:hover .Card-button:hover,
-.Card--active .Card-button:hover {
-  color: #fff;
-  background-color: #3f51b5;
-}
-.Card--active,
-.Card--active:hover {
-  background: none;
-}
-.Card--active .Card-explore,
-.Card--active:hover .Card-explore {
-  opacity: 0;
-  transform: translate(0, 3rem);
-  transition: all 0.5s cubic-bezier(0.42, 0, 0.58, 1);
-}
-.Card--active .Card-image,
-.Card--active:hover .Card-image {
-  opacity: 0;
-  transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
-  transform: scale(1.05) translate(0, -2.5rem) rotateX(50deg);
-}
-.Card--active .Card-image::before,
-.Card--active:hover .Card-image::before {
-  opacity: 0.4;
-}
-.Card--active .Card-button,
-.Card--active:hover .Card-button {
-  opacity: 0;
-  transition: all 0.35s cubic-bezier(0.42, 0, 0.58, 1);
-  transform: translate(-50%, -2rem) scale(1, 0.4);
-}
-.Grid-row:nth-child(1) .Card:nth-child(1).Card--active .Card-shadow:nth-child(3),
-.Grid-row:nth-child(1) .Card:nth-child(1) .Card--active:hover .Card-shadow:nth-child(3) {
-  transition: all 0.2s cubic-bezier(0.7, 0, 0.78, 1);
-  transform: scale(1) translate(6%, 113%);
-}
-.Grid-row:nth-child(1) .Card:nth-child(1).Card--active .Card-shadow:nth-child(2),
-.Grid-row:nth-child(1) .Card:nth-child(1) .Card--active:hover .Card-shadow:nth-child(2) {
-  transition: all 0.2s cubic-bezier(0.7, 0, 0.78, 1) 0.1s;
-  transform: scale(1) translate(6%, 223%);
-}
-.Grid-row:nth-child(1) .Card:nth-child(1).Card--active .Card-shadow:nth-child(1),
-.Grid-row:nth-child(1) .Card:nth-child(1) .Card--active:hover .Card-shadow:nth-child(1) {
-  transition: all 0.2s cubic-bezier(0.7, 0, 0.78, 1) 0.2s;
-  transform: scale(2.1) translate(81%, 80%);
-}
-.Grid-row:nth-child(1) .Card:nth-child(2).Card--active .Card-shadow:nth-child(3),
-.Grid-row:nth-child(1) .Card:nth-child(2) .Card--active:hover .Card-shadow:nth-child(3) {
-  transition: all 0.2s cubic-bezier(0.7, 0, 0.78, 1);
-  transform: scale(1) translate(-108%, 113%);
-}
-.Grid-row:nth-child(1) .Card:nth-child(2).Card--active .Card-shadow:nth-child(2),
-.Grid-row:nth-child(1) .Card:nth-child(2) .Card--active:hover .Card-shadow:nth-child(2) {
-  transition: all 0.2s cubic-bezier(0.7, 0, 0.78, 1) 0.1s;
-  transform: scale(1) translate(-108%, 223%);
-}
-.Grid-row:nth-child(1) .Card:nth-child(2).Card--active .Card-shadow:nth-child(1),
-.Grid-row:nth-child(1) .Card:nth-child(2) .Card--active:hover .Card-shadow:nth-child(1) {
-  transition: all 0.2s cubic-bezier(0.7, 0, 0.78, 1) 0.2s;
-  transform: scale(2.1) translate(26%, 80%);
-}
-.Grid-row:nth-child(1) .Card:nth-child(3).Card--active .Card-shadow:nth-child(3),
-.Grid-row:nth-child(1) .Card:nth-child(3) .Card--active:hover .Card-shadow:nth-child(3) {
-  transition: all 0.2s cubic-bezier(0.7, 0, 0.78, 1);
-  transform: scale(1) translate(-222%, 113%);
-}
-.Grid-row:nth-child(1) .Card:nth-child(3).Card--active .Card-shadow:nth-child(2),
-.Grid-row:nth-child(1) .Card:nth-child(3) .Card--active:hover .Card-shadow:nth-child(2) {
-  transition: all 0.2s cubic-bezier(0.7, 0, 0.78, 1) 0.1s;
-  transform: scale(1) translate(-222%, 223%);
-}
-.Grid-row:nth-child(1) .Card:nth-child(3).Card--active .Card-shadow:nth-child(1),
-.Grid-row:nth-child(1) .Card:nth-child(3) .Card--active:hover .Card-shadow:nth-child(1) {
-  transition: all 0.2s cubic-bezier(0.7, 0, 0.78, 1) 0.2s;
-  transform: scale(2.1) translate(-29%, 80%);
-}
-.Grid-row:nth-child(2) .Card:nth-child(1).Card--active .Card-shadow:nth-child(3),
-.Grid-row:nth-child(2) .Card:nth-child(1) .Card--active:hover .Card-shadow:nth-child(3) {
-  transition: all 0.2s cubic-bezier(0.7, 0, 0.78, 1);
-  transform: scale(1) translate(6%, -55%);
-}
-.Grid-row:nth-child(2) .Card:nth-child(1).Card--active .Card-shadow:nth-child(2),
-.Grid-row:nth-child(2) .Card:nth-child(1) .Card--active:hover .Card-shadow:nth-child(2) {
-  transition: all 0.2s cubic-bezier(0.7, 0, 0.78, 1) 0.1s;
-  transform: scale(1) translate(6%, 55%);
-}
-.Grid-row:nth-child(2) .Card:nth-child(1).Card--active .Card-shadow:nth-child(1),
-.Grid-row:nth-child(2) .Card:nth-child(1) .Card--active:hover .Card-shadow:nth-child(1) {
-  transition: all 0.2s cubic-bezier(0.7, 0, 0.78, 1) 0.2s;
-  transform: scale(2.1) translate(81%, 0%);
-}
-.Grid-row:nth-child(2) .Card:nth-child(2).Card--active .Card-shadow:nth-child(3),
-.Grid-row:nth-child(2) .Card:nth-child(2) .Card--active:hover .Card-shadow:nth-child(3) {
-  transition: all 0.2s cubic-bezier(0.7, 0, 0.78, 1);
-  transform: scale(1) translate(-108%, -55%);
-}
-.Grid-row:nth-child(2) .Card:nth-child(2).Card--active .Card-shadow:nth-child(2),
-.Grid-row:nth-child(2) .Card:nth-child(2) .Card--active:hover .Card-shadow:nth-child(2) {
-  transition: all 0.2s cubic-bezier(0.7, 0, 0.78, 1) 0.1s;
-  transform: scale(1) translate(-108%, 55%);
-}
-.Grid-row:nth-child(2) .Card:nth-child(2).Card--active .Card-shadow:nth-child(1),
-.Grid-row:nth-child(2) .Card:nth-child(2) .Card--active:hover .Card-shadow:nth-child(1) {
-  transition: all 0.2s cubic-bezier(0.7, 0, 0.78, 1) 0.2s;
-  transform: scale(2.1) translate(26%, 0%);
-}
-.Grid-row:nth-child(2) .Card:nth-child(3).Card--active .Card-shadow:nth-child(3),
-.Grid-row:nth-child(2) .Card:nth-child(3) .Card--active:hover .Card-shadow:nth-child(3) {
-  transition: all 0.2s cubic-bezier(0.7, 0, 0.78, 1);
-  transform: scale(1) translate(-222%, -55%);
-}
-.Grid-row:nth-child(2) .Card:nth-child(3).Card--active .Card-shadow:nth-child(2),
-.Grid-row:nth-child(2) .Card:nth-child(3) .Card--active:hover .Card-shadow:nth-child(2) {
-  transition: all 0.2s cubic-bezier(0.7, 0, 0.78, 1) 0.1s;
-  transform: scale(1) translate(-222%, 55%);
-}
-.Grid-row:nth-child(2) .Card:nth-child(3).Card--active .Card-shadow:nth-child(1),
-.Grid-row:nth-child(2) .Card:nth-child(3) .Card--active:hover .Card-shadow:nth-child(1) {
-  transition: all 0.2s cubic-bezier(0.7, 0, 0.78, 1) 0.2s;
-  transform: scale(2.1) translate(-29%, 0%);
-}
-.Grid-row:nth-child(3) .Card:nth-child(1).Card--active .Card-shadow:nth-child(3),
-.Grid-row:nth-child(3) .Card:nth-child(1) .Card--active:hover .Card-shadow:nth-child(3) {
-  transition: all 0.2s cubic-bezier(0.7, 0, 0.78, 1);
-  transform: scale(1) translate(6%, -223%);
-}
-.Grid-row:nth-child(3) .Card:nth-child(1).Card--active .Card-shadow:nth-child(2),
-.Grid-row:nth-child(3) .Card:nth-child(1) .Card--active:hover .Card-shadow:nth-child(2) {
-  transition: all 0.2s cubic-bezier(0.7, 0, 0.78, 1) 0.1s;
-  transform: scale(1) translate(6%, -113%);
-}
-.Grid-row:nth-child(3) .Card:nth-child(1).Card--active .Card-shadow:nth-child(1),
-.Grid-row:nth-child(3) .Card:nth-child(1) .Card--active:hover .Card-shadow:nth-child(1) {
-  transition: all 0.2s cubic-bezier(0.7, 0, 0.78, 1) 0.2s;
-  transform: scale(2.1) translate(81%, -80%);
-}
-.Grid-row:nth-child(3) .Card:nth-child(2).Card--active .Card-shadow:nth-child(3),
-.Grid-row:nth-child(3) .Card:nth-child(2) .Card--active:hover .Card-shadow:nth-child(3) {
-  transition: all 0.2s cubic-bezier(0.7, 0, 0.78, 1);
-  transform: scale(1) translate(-108%, -223%);
-}
-.Grid-row:nth-child(3) .Card:nth-child(2).Card--active .Card-shadow:nth-child(2),
-.Grid-row:nth-child(3) .Card:nth-child(2) .Card--active:hover .Card-shadow:nth-child(2) {
-  transition: all 0.2s cubic-bezier(0.7, 0, 0.78, 1) 0.1s;
-  transform: scale(1) translate(-108%, -113%);
-}
-.Grid-row:nth-child(3) .Card:nth-child(2).Card--active .Card-shadow:nth-child(1),
-.Grid-row:nth-child(3) .Card:nth-child(2) .Card--active:hover .Card-shadow:nth-child(1) {
-  transition: all 0.2s cubic-bezier(0.7, 0, 0.78, 1) 0.2s;
-  transform: scale(2.1) translate(26%, -80%);
-}
-.Grid-row:nth-child(3) .Card:nth-child(3).Card--active .Card-shadow:nth-child(3),
-.Grid-row:nth-child(3) .Card:nth-child(3) .Card--active:hover .Card-shadow:nth-child(3) {
-  transition: all 0.2s cubic-bezier(0.7, 0, 0.78, 1);
-  transform: scale(1) translate(-222%, -223%);
-}
-.Grid-row:nth-child(3) .Card:nth-child(3).Card--active .Card-shadow:nth-child(2),
-.Grid-row:nth-child(3) .Card:nth-child(3) .Card--active:hover .Card-shadow:nth-child(2) {
-  transition: all 0.2s cubic-bezier(0.7, 0, 0.78, 1) 0.1s;
-  transform: scale(1) translate(-222%, -113%);
-}
-.Grid-row:nth-child(3) .Card:nth-child(3).Card--active .Card-shadow:nth-child(1),
-.Grid-row:nth-child(3) .Card:nth-child(3) .Card--active:hover .Card-shadow:nth-child(1) {
-  transition: all 0.2s cubic-bezier(0.7, 0, 0.78, 1) 0.2s;
-  transform: scale(2.1) translate(-29%, -80%);
-}
-.Gallery {
-  display: block;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: #f5f5f5;
-  opacity: 0;
-  transform: scale(1.2);
-  transition: none;
-  padding: 18rem 0;
-  overflow-y: scroll;
-}
-.Gallery-header {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  background-color: #eee;
-  padding-bottom: 5rem;
-}
-.Gallery-close {
-  position: absolute;
-  right: 1rem;
-  top: 1rem;
-  font-size: 3rem;
-  opacity: 0.5;
-  cursor: pointer;
-}
-.Gallery-close:hover {
-  opacity: 0.8;
-}
-.Gallery-images {
-  display: flex;
-  width: 47rem;
-  margin: 0 auto;
-  justify-content: space-between;
-  margin-bottom: 1rem;
-}
-.Gallery-images:nth-child(3) {
-  transition: all 0.2s cubic-bezier(0.7, 0, 0.78, 1) 0.33s;
-  opacity: 0;
-  transform: translate(0, 3rem) scale(1.1);
-}
-.Gallery-images:nth-child(4) {
-  transition: all 0.2s cubic-bezier(0.7, 0, 0.78, 1) 0.44s;
-  opacity: 0;
-  transform: translate(0, 3rem) scale(1.1);
-}
-.Gallery-images:nth-child(5) {
-  transition: all 0.2s cubic-bezier(0.7, 0, 0.78, 1) 0.55s;
-  opacity: 0;
-  transform: translate(0, 3rem) scale(1.1);
-}
-.Gallery-images:nth-child(6) {
-  transition: all 0.2s cubic-bezier(0.7, 0, 0.78, 1) 0.66s;
-  opacity: 0;
-  transform: translate(0, 3rem) scale(1.1);
-}
-.Gallery-left {
-  flex: 1 auto;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-}
-.Gallery-image {
-  display: block;
-  width: 15rem;
-  height: 9.5rem;
-  transition: all 0.2s cubic-bezier(0.42, 0, 0.58, 1);
-  background: #aebfc7;
-  background-size: auto 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.Gallery-image--primary {
-  width: 31rem;
-  height: 20rem;
-  background-color: #673ab7;
-}
-.Gallery--active {
-  z-index: 100;
-  background: #fff;
-  transform: scale(1);
-  opacity: 1;
-  transition: all 0.5s cubic-bezier(0.7, 0, 0.78, 1) 0.1s;
-}
-.Gallery--active .Gallery-close {
-  display: block;
-}
-.Gallery--active .Gallery-images {
-  opacity: 1;
-  transform: none;
-}
 
 /*-------------------------------애니메이션속성------------------------------------------*/
 @keyframes fadein {
@@ -618,3 +217,429 @@ nav {
         opacity: 1;
     }
 }
+/*-----------------------------------------파티클---------------------------------*/
+.particle {
+	 position: absolute;
+	 border-radius: 50%;
+}
+ @keyframes particle-animation-1 {
+	 100% {
+		 transform: translate3d(87vw, 54vh, 40px);
+	}
+}
+ .particle:nth-child(1) {
+	 animation: particle-animation-1 60s infinite;
+	 opacity: 0.68;
+	 height: 9px;
+	 width: 9px;
+	 animation-delay: -0.2s;
+	 transform: translate3d(58vw, 18vh, 55px);
+	 background: #d3d926;
+}
+ @keyframes particle-animation-2 {
+	 100% {
+		 transform: translate3d(61vw, 52vh, 93px);
+	}
+}
+ .particle:nth-child(2) {
+	 animation: particle-animation-2 60s infinite;
+	 opacity: 0.44;
+	 height: 7px;
+	 width: 7px;
+	 animation-delay: -0.4s;
+	 transform: translate3d(25vw, 80vh, 4px);
+	 background: #26d0d9;
+}
+ @keyframes particle-animation-3 {
+	 100% {
+		 transform: translate3d(41vw, 63vh, 24px);
+	}
+}
+ .particle:nth-child(3) {
+	 animation: particle-animation-3 60s infinite;
+	 opacity: 0.98;
+	 height: 9px;
+	 width: 9px;
+	 animation-delay: -0.6s;
+	 transform: translate3d(44vw, 60vh, 3px);
+	 background: #d926a3;
+}
+ @keyframes particle-animation-4 {
+	 100% {
+		 transform: translate3d(33vw, 7vh, 99px);
+	}
+}
+ .particle:nth-child(4) {
+	 animation: particle-animation-4 60s infinite;
+	 opacity: 0.03;
+	 height: 9px;
+	 width: 9px;
+	 animation-delay: -0.8s;
+	 transform: translate3d(40vw, 25vh, 61px);
+	 background: #26d92c;
+}
+ @keyframes particle-animation-5 {
+	 100% {
+		 transform: translate3d(9vw, 42vh, 44px);
+	}
+}
+ .particle:nth-child(5) {
+	 animation: particle-animation-5 60s infinite;
+	 opacity: 1;
+	 height: 10px;
+	 width: 10px;
+	 animation-delay: -1s;
+	 transform: translate3d(10vw, 64vh, 97px);
+	 background: #9426d9;
+}
+ @keyframes particle-animation-6 {
+	 100% {
+		 transform: translate3d(54vw, 47vh, 27px);
+	}
+}
+ .particle:nth-child(6) {
+	 animation: particle-animation-6 60s infinite;
+	 opacity: 0.59;
+	 height: 10px;
+	 width: 10px;
+	 animation-delay: -1.2s;
+	 transform: translate3d(42vw, 56vh, 84px);
+	 background: #26d9d6;
+}
+ @keyframes particle-animation-7 {
+	 100% {
+		 transform: translate3d(13vw, 66vh, 72px);
+	}
+}
+ .particle:nth-child(7) {
+	 animation: particle-animation-7 60s infinite;
+	 opacity: 0.61;
+	 height: 9px;
+	 width: 9px;
+	 animation-delay: -1.4s;
+	 transform: translate3d(48vw, 72vh, 62px);
+	 background: #47d926;
+}
+ @keyframes particle-animation-8 {
+	 100% {
+		 transform: translate3d(27vw, 40vh, 8px);
+	}
+}
+ .particle:nth-child(8) {
+	 animation: particle-animation-8 60s infinite;
+	 opacity: 0.04;
+	 height: 6px;
+	 width: 6px;
+	 animation-delay: -1.6s;
+	 transform: translate3d(20vw, 10vh, 93px);
+	 background: #26d9a6;
+}
+ @keyframes particle-animation-9 {
+	 100% {
+		 transform: translate3d(90vw, 36vh, 50px);
+	}
+}
+ .particle:nth-child(9) {
+	 animation: particle-animation-9 60s infinite;
+	 opacity: 0.97;
+	 height: 9px;
+	 width: 9px;
+	 animation-delay: -1.8s;
+	 transform: translate3d(68vw, 78vh, 99px);
+	 background: #d9262f;
+}
+ @keyframes particle-animation-10 {
+	 100% {
+		 transform: translate3d(36vw, 17vh, 58px);
+	}
+}
+ .particle:nth-child(10) {
+	 animation: particle-animation-10 60s infinite;
+	 opacity: 0.97;
+	 height: 10px;
+	 width: 10px;
+	 animation-delay: -2s;
+	 transform: translate3d(89vw, 63vh, 90px);
+	 background: #38d926;
+}
+ @keyframes particle-animation-11 {
+	 100% {
+		 transform: translate3d(21vw, 36vh, 46px);
+	}
+}
+ .particle:nth-child(11) {
+	 animation: particle-animation-11 60s infinite;
+	 opacity: 0.63;
+	 height: 9px;
+	 width: 9px;
+	 animation-delay: -2.2s;
+	 transform: translate3d(48vw, 65vh, 10px);
+	 background: #d92691;
+}
+ @keyframes particle-animation-12 {
+	 100% {
+		 transform: translate3d(48vw, 18vh, 43px);
+	}
+}
+ .particle:nth-child(12) {
+	 animation: particle-animation-12 60s infinite;
+	 opacity: 0.98;
+	 height: 7px;
+	 width: 7px;
+	 animation-delay: -2.4s;
+	 transform: translate3d(80vw, 76vh, 9px);
+	 background: #8826d9;
+}
+ @keyframes particle-animation-13 {
+	 100% {
+		 transform: translate3d(53vw, 44vh, 28px);
+	}
+}
+ .particle:nth-child(13) {
+	 animation: particle-animation-13 60s infinite;
+	 opacity: 0.46;
+	 height: 10px;
+	 width: 10px;
+	 animation-delay: -2.6s;
+	 transform: translate3d(86vw, 19vh, 68px);
+	 background: #26d965;
+}
+ @keyframes particle-animation-14 {
+	 100% {
+		 transform: translate3d(6vw, 79vh, 81px);
+	}
+}
+ .particle:nth-child(14) {
+	 animation: particle-animation-14 60s infinite;
+	 opacity: 0.63;
+	 height: 8px;
+	 width: 8px;
+	 animation-delay: -2.8s;
+	 transform: translate3d(7vw, 5vh, 88px);
+	 background: #d9269a;
+}
+ @keyframes particle-animation-15 {
+	 100% {
+		 transform: translate3d(2vw, 86vh, 16px);
+	}
+}
+ .particle:nth-child(15) {
+	 animation: particle-animation-15 60s infinite;
+	 opacity: 0.02;
+	 height: 7px;
+	 width: 7px;
+	 animation-delay: -3s;
+	 transform: translate3d(4vw, 12vh, 68px);
+	 background: #b526d9;
+}
+ @keyframes particle-animation-16 {
+	 100% {
+		 transform: translate3d(17vw, 3vh, 29px);
+	}
+}
+ .particle:nth-child(16) {
+	 animation: particle-animation-16 60s infinite;
+	 opacity: 0.71;
+	 height: 9px;
+	 width: 9px;
+	 animation-delay: -3.2s;
+	 transform: translate3d(13vw, 53vh, 74px);
+	 background: #2635d9;
+}
+ @keyframes particle-animation-17 {
+	 100% {
+		 transform: translate3d(61vw, 64vh, 70px);
+	}
+}
+ .particle:nth-child(17) {
+	 animation: particle-animation-17 60s infinite;
+	 opacity: 0.42;
+	 height: 6px;
+	 width: 6px;
+	 animation-delay: -3.4s;
+	 transform: translate3d(69vw, 20vh, 63px);
+	 background: #d9267d;
+}
+ @keyframes particle-animation-18 {
+	 100% {
+		 transform: translate3d(63vw, 80vh, 21px);
+	}
+}
+ .particle:nth-child(18) {
+	 animation: particle-animation-18 60s infinite;
+	 opacity: 0.33;
+	 height: 7px;
+	 width: 7px;
+	 animation-delay: -3.6s;
+	 transform: translate3d(27vw, 59vh, 96px);
+	 background: #d926a0;
+}
+ @keyframes particle-animation-19 {
+	 100% {
+		 transform: translate3d(9vw, 59vh, 42px);
+	}
+}
+ .particle:nth-child(19) {
+	 animation: particle-animation-19 60s infinite;
+	 opacity: 0.77;
+	 height: 10px;
+	 width: 10px;
+	 animation-delay: -3.8s;
+	 transform: translate3d(64vw, 44vh, 2px);
+	 background: #26d935;
+}
+ @keyframes particle-animation-20 {
+	 100% {
+		 transform: translate3d(32vw, 80vh, 18px);
+	}
+}
+ .particle:nth-child(20) {
+	 animation: particle-animation-20 60s infinite;
+	 opacity: 0.2;
+	 height: 6px;
+	 width: 6px;
+	 animation-delay: -4s;
+	 transform: translate3d(63vw, 79vh, 55px);
+	 background: #2674d9;
+}
+ @keyframes particle-animation-21 {
+	 100% {
+		 transform: translate3d(87vw, 17vh, 81px);
+	}
+}
+ .particle:nth-child(21) {
+	 animation: particle-animation-21 60s infinite;
+	 opacity: 0.73;
+	 height: 6px;
+	 width: 6px;
+	 animation-delay: -4.2s;
+	 transform: translate3d(46vw, 82vh, 20px);
+	 background: #62d926;
+}
+ @keyframes particle-animation-22 {
+	 100% {
+		 transform: translate3d(32vw, 40vh, 65px);
+	}
+}
+ .particle:nth-child(22) {
+	 animation: particle-animation-22 60s infinite;
+	 opacity: 0.2;
+	 height: 7px;
+	 width: 7px;
+	 animation-delay: -4.4s;
+	 transform: translate3d(28vw, 49vh, 74px);
+	 background: #2674d9;
+}
+ @keyframes particle-animation-23 {
+	 100% {
+		 transform: translate3d(11vw, 25vh, 1px);
+	}
+}
+ .particle:nth-child(23) {
+	 animation: particle-animation-23 60s infinite;
+	 opacity: 0.51;
+	 height: 9px;
+	 width: 9px;
+	 animation-delay: -4.6s;
+	 transform: translate3d(27vw, 7vh, 16px);
+	 background: #8526d9;
+}
+ @keyframes particle-animation-24 {
+	 100% {
+		 transform: translate3d(63vw, 35vh, 40px);
+	}
+}
+ .particle:nth-child(24) {
+	 animation: particle-animation-24 60s infinite;
+	 opacity: 0.38;
+	 height: 9px;
+	 width: 9px;
+	 animation-delay: -4.8s;
+	 transform: translate3d(19vw, 79vh, 18px);
+	 background: #d9c726;
+}
+ @keyframes particle-animation-25 {
+	 100% {
+		 transform: translate3d(27vw, 25vh, 7px);
+	}
+}
+ .particle:nth-child(25) {
+	 animation: particle-animation-25 60s infinite;
+	 opacity: 0.82;
+	 height: 8px;
+	 width: 8px;
+	 animation-delay: -5s;
+	 transform: translate3d(84vw, 60vh, 34px);
+	 background: #af26d9;
+}
+ @keyframes particle-animation-26 {
+	 100% {
+		 transform: translate3d(60vw, 44vh, 58px);
+	}
+}
+ .particle:nth-child(26) {
+	 animation: particle-animation-26 60s infinite;
+	 opacity: 0.11;
+	 height: 8px;
+	 width: 8px;
+	 animation-delay: -5.2s;
+	 transform: translate3d(15vw, 47vh, 42px);
+	 background: #62d926;
+}
+ @keyframes particle-animation-27 {
+	 100% {
+		 transform: translate3d(3vw, 37vh, 35px);
+	}
+}
+ .particle:nth-child(27) {
+	 animation: particle-animation-27 60s infinite;
+	 opacity: 0.59;
+	 height: 10px;
+	 width: 10px;
+	 animation-delay: -5.4s;
+	 transform: translate3d(17vw, 15vh, 13px);
+	 background: #26d9b8;
+}
+ @keyframes particle-animation-28 {
+	 100% {
+		 transform: translate3d(67vw, 26vh, 51px);
+	}
+}
+ .particle:nth-child(28) {
+	 animation: particle-animation-28 60s infinite;
+	 opacity: 0.77;
+	 height: 9px;
+	 width: 9px;
+	 animation-delay: -5.6s;
+	 transform: translate3d(38vw, 36vh, 75px);
+	 background: #4ad926;
+}
+ @keyframes particle-animation-29 {
+	 100% {
+		 transform: translate3d(66vw, 85vh, 72px);
+	}
+}
+ .particle:nth-child(29) {
+	 animation: particle-animation-29 60s infinite;
+	 opacity: 0.76;
+	 height: 10px;
+	 width: 10px;
+	 animation-delay: -5.8s;
+	 transform: translate3d(28vw, 44vh, 17px);
+	 background: #2635d9;
+}
+ @keyframes particle-animation-30 {
+	 100% {
+		 transform: translate3d(84vw, 79vh, 47px);
+	}
+}
+ .particle:nth-child(30) {
+	 animation: particle-animation-30 60s infinite;
+	 opacity: 0.28;
+	 height: 9px;
+	 width: 9px;
+	 animation-delay: -6s;
+	 transform: translate3d(76vw, 54vh, 87px);
+	 background: #d9ca26;
+}
+ 

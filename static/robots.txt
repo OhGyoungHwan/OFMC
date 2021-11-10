@@ -1,0 +1,3 @@
+User-agent: *
+Allow:/
+Sitemap: https://coloravg.run.goorm.io/sitemap.xml

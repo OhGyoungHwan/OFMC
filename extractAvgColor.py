@@ -76,7 +76,7 @@ def extractAvgColor(img):
     onedimensionimg = np.frombuffer(img, dtype=np.uint8)
     threedimensionimage = cv2.imdecode(onedimensionimg, cv2.IMREAD_COLOR)
     smallthreedimensionimage = cv2.resize(
-        threedimensionimage, dsize=(640, 480), interpolation=cv2.INTER_AREA
+        threedimensionimage, dsize=(100, 100), interpolation=cv2.INTER_AREA
     )
     onelinecolors = smallthreedimensionimage.reshape(
         (smallthreedimensionimage.shape[0] *
