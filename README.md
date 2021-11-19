@@ -1,5 +1,10 @@
 <div align=center><h1> coloravg </h1></div>
 <div align=center><h2> 코디에 최적화된 색상추천 사이트 </h2></div>
+<div align=center>
+ 
+![image](https://user-images.githubusercontent.com/71165066/142568124-dac20092-4586-49b9-a626-8feec7f88959.png)
+ 
+</div>
 
 # Tech Stack
 <div align=center>
