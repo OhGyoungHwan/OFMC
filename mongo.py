@@ -18,5 +18,9 @@ def mongoimport(csv_path, db_name, coll_name, db_url='localhost', db_port=27017)
         print(x)
 
 
+mongoimport("./csv/colors.csv",
+            "coloravg", "color")
 mongoimport("./csv/styles.csv",
             "coloravg", "styles")
+mongoimport("./csv/colors_recommend_styles.csv",
+            "coloravg", "colors_recommend_styles")
