@@ -1,6 +1,6 @@
 from pymongo import MongoClient
 
-client = MongoClient("0.0.0.0", 27017)
+client = MongoClient("localhost", 27017)
 db = client["coloravg"]
 coll = db["color"]
 
@@ -24,6 +24,7 @@ def similarColor(base):
         return ["gray"]
     elif base == "black":
         return ["black"]
+
 
 def complementaryColor(base):
     if base == "red":
@@ -169,7 +170,8 @@ def extractStyleColor(style, base, tone):
             pcolor += triColor(base)
 
         elif style == "rockchic":
-            ptone += ["b", "d", "dk", "dkg", "dp", "g", "lf", "ltg", "p", "s", "sf", "v"]
+            ptone += ["b", "d", "dk", "dkg", "dp",
+                      "g", "lf", "ltg", "p", "s", "sf", "v"]
             pcolor += ["black"]
 
         elif style == "amekaji":
