@@ -44,3 +44,7 @@ pip install scikit-learn
 ```
 pip install pymongo
 ```
+MongoDB 설치 후 DB생성
+```
+python mongo.py
+```
